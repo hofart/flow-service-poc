@@ -1,0 +1,36 @@
+[
+  {
+    "label": "Tela de início de atendimento",
+    "value": "init-attendance",
+    "items": []
+  },
+  {
+    "label": "Termos de uso ",
+    "value": "terms-of-use",
+    "items": [
+      {
+        "label": "Termos do Kleber",
+        "value": "terms-of-use"
+      },
+      {
+        "label": "Termos do Galanter",
+        "value": "terms-of-use"
+      }
+    ]
+  },
+  {
+    "label": "Consentimento",
+    "value": "consents",
+    "items": []
+  },
+  {
+    "label": "Assinatura",
+    "value": "signature",
+    "items": []
+  },
+  {
+    "label": "Captura",
+    "value": "capture",
+    "items": []
+  }
+]

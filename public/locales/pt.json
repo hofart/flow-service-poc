@@ -1,0 +1,333 @@
+{
+  "layout": {
+    "userMenu": {
+      "logout": "Sair"
+    }
+  },
+  "global": {
+    "close": "Fechar",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "shared": {
+      "filters": {
+        "list": {
+          "header": {
+            "clear": "Limpar",
+            "title": "Filtrar por período"
+          },
+          "date": {
+            "title": "Filtrar por período",
+            "actions": {
+              "clear": "limpar data",
+              "confirm": "Confirme a data"
+            },
+            "presets": {
+              "7d": "7 dias",
+              "15d": "15 dias",
+              "1m": "1 mês"
+            }
+          },
+          "sort": {
+            "title": "Ordenar por",
+            "options": {
+              "recent": "Mais recentes",
+              "oldest": "Mais antigo",
+              "name": "Ordem alfabética"
+            }
+          },
+          "status": {
+            "options": {
+              "active": "ativo",
+              "inactive": "inativo"
+            },
+            "title": "Status do usuário"
+          }
+        }
+      }
+    }
+  },
+  "routes": {
+    "auth": {
+      "path": "/auth",
+      "key": "auth",
+      "name": "Autenticação",
+      "children": {
+        "login": {
+          "path": "/auth/login",
+          "key": "authlogin",
+          "name": "Login de Autenticação",
+          "description": ""
+        },
+        "reset": {
+          "path": "/auth/reset",
+          "key": "authreset",
+          "name": "Redefinir senha",
+          "description": ""
+        }
+      }
+    },
+    "home": {
+      "path": "/home",
+      "key": "home",
+      "name": "Início",
+      "children": {
+        "dashboard": {
+          "path": "",
+          "key": "homedash",
+          "name": "Dashboard Inicial",
+          "description": ""
+        }
+      }
+    },
+    "serviceFlow": {
+      "path": "/service-flow",
+      "key": "serviceflow",
+      "name": "Fluxo de Atendimento",
+      "children": {
+        "list": {
+          "path": "/service-flow/list",
+          "key": "serviceflowlist",
+          "name": "Lista de Fluxo de Atendimento",
+          "description": ""
+        },
+        "add": {
+          "path": "/service-flow/add",
+          "key": "serviceflowadd",
+          "name": "Construtor de fluxos",
+          "description": ""
+        },
+        "edit": {
+          "path": "/service-flow/:flowId/edit",
+          "key": "serviceflowedit",
+          "name": "Editar Fluxo de Atendimento",
+          "title": "Editar Fluxo de Atendimento",
+          "description": ""
+        }
+      }
+    }
+  },
+  "modules": {
+    "auth": {
+      "leftText": "Nunca foi tão fácil e seguro conhecer seus usuários",
+      "forgotPassword": "Esqueceu sua senha?",
+      "recoverLink": "Recuperar senha",
+      "form": {
+        "title": "Bem-vindo de volta",
+        "subtitle": "Digite suas credenciais para acessar o sistema",
+        "usernamePlaceholder": "E-mail",
+        "passwordPlaceholder": "Senha",
+        "loginButton": "Entrar",
+        "errors": {
+          "usernameRequired": "O e-mail é obrigatório",
+          "passwordRequired": "A senha é obrigatória",
+          "loginError": "Credenciais inválidas. Por favor, tente novamente"
+        }
+      },
+      "passwordRecovery": {
+        "formRecovery": {
+          "title": "Recuperar senha",
+          "subtitle": "Digite seu e-mail para receber o link de recuperação",
+          "usernamePlaceholder": "Digite seu e-mail",
+          "recoveryButton": "Enviar",
+          "customErrorMessage": null,
+          "cancelButton": "Cancelar",
+          "errors": {
+            "usernameRequired": "E-mail é obrigatório",
+            "emailInvalid": "E-mail inválido"
+          }
+        },
+        "successRecovery": {
+          "title": "E-mail enviado!",
+          "subtitle": "Enviamos um e-mail para <b>{{email}}</b> com o link de restauração de senha.",
+          "notReceivedButton": "Não recebi o e-mail",
+          "cancelButton": "Fechar"
+        },
+        "lostEmail": {
+          "title": "Não recebeu o e-mail?",
+          "subtitle": "Verifique a caixa de spam do seu e-mail <b>{{email}}</b>, caso não haja nenhuma mensagem, clique em ajuda.",
+          "cancelButton": "Fechar",
+          "helpButton": "Ajuda"
+        },
+        "form": {
+          "title": "Recuperar senha",
+          "subtitle": "Digite seu e-mail para receber o link de recuperação",
+          "placeholder": "Digite seu e-mail",
+          "button": "Enviar",
+          "cancel": "Cancelar",
+          "errorEmail": "E-mail é obrigatório",
+          "errorEmailInvalid": "E-mail inválido"
+        },
+        "success": {
+          "title": "E-mail enviado!",
+          "subtitle": "Enviamos um e-mail para <b>{{email}}</b> com o link de restauração de senha.",
+          "button": "Não recebi o e-mail",
+          "close": "Fechar"
+        },
+        "error": {
+          "title": "Erro na requisição",
+          "message": "Houve um problema ao enviar o e-mail. Tente novamente mais tarde"
+        }
+      },
+      "firstAccess": {
+        "title": "Este é seu primeiro acesso!",
+        "subtitle": "Antes de iniciar, vamos configurar o seu login.\nCrie a senha de acesso para ingressar."
+      },
+      "resetPassword": {
+        "title": "Redefinir senha",
+        "subtitle": "Crie uma nova senha para realizar o login. Essa será a sua nova senha de acesso ao sistema.",
+        "passwordPlaceholder": "Senha",
+        "confirmPasswordPlaceholder": "Repita a senha",
+        "saveButton": "Salvar senha",
+        "supportLink": "clique aqui",
+        "supportText": "Se você não fez essa solicitação,",
+        "successTitle": "Senha redefinida com sucesso!",
+        "successMessage": "Sua senha foi alterada com sucesso. Você já pode fazer login com a nova senha.",
+        "errorTitle": "O link de redefinição de senha não está ativo",
+        "errorMessage": "Por favor realize novamente a solicitação de senha para receber um novo link.",
+        "errors": {
+          "passwordRequired": "A senha é obrigatória",
+          "confirmPasswordRequired": "A confirmação de senha é obrigatória",
+          "passwordsNotMatch": "As senhas não coincidem",
+          "passwordTooWeak": "A senha não atende aos critérios de segurança",
+          "linkExpired": "O link de redefinição expirou"
+        }
+      }
+    },
+    "serviceFlow": {
+      "views": {
+        "add": {
+          "fluxo": "Nome do fluxo",
+          "flows": {
+            "node": {
+              "home": "Início",
+              "consent": {
+                "title": "Consentimento de dados",
+                "description": "Preencha as informações",
+                "consentItems": "Itens de consentimento",
+                "addItem": "Adicionar item",
+                "buttons": {
+                  "save": "Salvar"
+                },
+                "placeholders": {
+                  "descriptionConsent": "Descrição consentimento",
+                  "nameConsent": "Nome consentimento"
+                }
+              },
+              "initAttendance": {
+                "title": "Início do atendimento",
+                "description": "Informações da tela inicial",
+                "orientation": "Vamos iniciar o seu processo de cadastro, durante a operação você passará pelas seguintes etapas:",
+                "placeholder": "Descrição da jornada",
+                "infoList": "*A listagem com as etapas de atendimento será exibida abaixo do texto acima para o usuário.",
+                "buttons": {
+                  "save": "Salvar"
+                }
+              },
+              "placeholder": "Para criar o fluxo, selecione um card para começar a rota e solte aqui.",
+              "signature": {
+                "title": "Captura de assinatura",
+                "fields": {
+                  "titleCapture": "Título da captura",
+                  "titleSignature": "Título da assinatura",
+                  "additionalText": "Texto adicional"
+                },
+                "placeholders": {
+                  "titleSignature": "Título da assinatura",
+                  "additionalText": "Texto adicional"
+                }
+              },
+              "termOfUse": {
+                "title": "Termos de uso e privacidade",
+                "description": "Confira as informações",
+                "text": "Texto do termo de uso",
+                "editText": "Editar texto",
+                "buttons": {
+                  "save": "Salvar"
+                }
+              }
+            },
+            "terms": {
+              "title": "Termos de uso"
+            }
+          },
+          "header": {
+            "saveFlow": "Salvar fluxo",
+            "editTitle": "Editar título",
+            "tooltip": {
+              "title": "Necessário preencher os campos",
+              "description": "É preciso que todos os campos estejam preenchidos para salvar o fluxo."
+            },
+            "modal": {
+              "delete": {
+                "title": "Deseja excluir o fluxo?",
+                "content": "Essa ação não pode ser desfeita",
+                "confirm": "Confirmar",
+                "cancel": "Cancelar"
+              },
+              "edit": {
+                "cancel": "Cancelar",
+                "confirm": "Confirmar",
+                "content": "Editar $ {Content}",
+                "title": "Editar título"
+              }
+            }
+          },
+          "contextMenu": {
+            "copy": "Copiar",
+            "paste": "Colar",
+            "delete": "Deletar",
+            "shortcuts": {
+              "copy": "CTRL+SHIFT+C",
+              "paste": "CTRL+SHIFT+V",
+              "delete": "SHIFT+Del"
+            }
+          },
+          "sideMenu": {
+            "flowCustomization": "Customização de fluxo",
+            "instructions": "Clique nas categorias abaixo para visualizar as opções. Para adicionar um item ao fluxo, basta puxar ou clicar.",
+            "tabs": {
+              "creation": "Criação de fluxo",
+              "preview": "Preview"
+            }
+          },
+          "config": {
+            "languages": {
+              "pt": "Português",
+              "en": "English",
+              "es": "Español"
+            }
+          },
+          "selectLanguage": {
+            "filling": "Idioma em preenchimento"
+          },
+          "preview": {
+            "default": {
+              "hello": "Olá!",
+              "continue": "Continuar"
+            },
+            "termsOfUse": {
+              "title": "Termos de uso e privacidade",
+              "subtitle": "Para prosseguir, é necessário que você leia e concorde com os termos de uso do \"{title}\"."
+            }
+          }
+        },
+        "list": {
+          "title": "Fluxos criados",
+          "buttons": {
+            "add": "Criar novo fluxo"
+          },
+          "statusActive": "Ativo",
+          "statusInactive": "Inativo"
+        }
+      }
+    }
+  },
+  "api": {
+    "company": {
+      "success": {
+        "updated": "Atualizado com sucesso"
+      }
+    }
+  }
+}

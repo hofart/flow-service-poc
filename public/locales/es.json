@@ -1,0 +1,333 @@
+{
+  "layout": {
+    "userMenu": {
+      "logout": "Cerrar sesión"
+    }
+  },
+  "global": {
+    "close": "Cerrar",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "shared": {
+      "filters": {
+        "list": {
+          "header": {
+            "clear": "Limpio",
+            "title": "Filtrar por período"
+          },
+          "date": {
+            "title": "Filtrar por período",
+            "actions": {
+              "clear": "Fecha clara",
+              "confirm": "Fecha de confirmación"
+            },
+            "presets": {
+              "7d": "7 días",
+              "15d": "15 días",
+              "1m": "1 mes"
+            }
+          },
+          "sort": {
+            "title": "Ordenar por",
+            "options": {
+              "recent": "reciente",
+              "oldest": "mayor",
+              "name": "nombre"
+            }
+          },
+          "status": {
+            "options": {
+              "active": "activo",
+              "inactive": "inactivo"
+            },
+            "title": "Estado del usuario"
+          }
+        }
+      }
+    }
+  },
+  "routes": {
+    "auth": {
+      "path": "/auth",
+      "key": "auth",
+      "name": "Autenticación",
+      "children": {
+        "login": {
+          "path": "/auth/login",
+          "key": "authlogin",
+          "name": "Login de Autenticación",
+          "description": ""
+        },
+        "reset": {
+          "path": "/auth/reset",
+          "key": "authreset",
+          "name": "Restablecer Contraseña",
+          "description": ""
+        }
+      }
+    },
+    "home": {
+      "path": "/home",
+      "key": "home",
+      "name": "Inicio",
+      "children": {
+        "dashboard": {
+          "path": "",
+          "key": "homedash",
+          "name": "Dashboard Inicio",
+          "description": ""
+        }
+      }
+    },
+    "serviceFlow": {
+      "path": "/service-flow",
+      "key": "serviceflow",
+      "name": "Flujo de Servicio",
+      "children": {
+        "list": {
+          "path": "/service-flow/list",
+          "key": "serviceflowlist",
+          "name": "Lista de Flujo de Servicio",
+          "description": ""
+        },
+        "add": {
+          "path": "/service-flow/add",
+          "key": "serviceflowadd",
+          "name": "Generador de flujo",
+          "description": ""
+        },
+        "edit": {
+          "path": "/service-flow/:flowId/edit",
+          "key": "serviceflowedit",
+          "name": "Editar Flujo de Servicio",
+          "title": "Editar Flujo de Servicio",
+          "description": ""
+        }
+      }
+    }
+  },
+  "modules": {
+    "auth": {
+      "leftText": "Nunca ha sido tan fácil y seguro conocer a tus usuarios",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "recoverLink": "Recuperar contraseña",
+      "form": {
+        "title": "Bienvenido de nuevo",
+        "subtitle": "Ingresa tus credenciales para acceder al sistema",
+        "usernamePlaceholder": "Correo electrónico",
+        "passwordPlaceholder": "Contraseña",
+        "loginButton": "Iniciar sesión",
+        "errors": {
+          "usernameRequired": "El correo electrónico es obligatorio",
+          "passwordRequired": "La contraseña es obligatoria",
+          "loginError": "Credenciales inválidas. Por favor, intenta nuevamente"
+        }
+      },
+      "passwordRecovery": {
+        "formRecovery": {
+          "title": "Recuperar contraseña",
+          "subtitle": "Ingresa tu email para recibir el enlace de recuperación",
+          "usernamePlaceholder": "Ingresa tu email",
+          "recoveryButton": "Enviar",
+          "customErrorMessage": null,
+          "cancelButton": "Cancelar",
+          "errors": {
+            "usernameRequired": "Email es requerido",
+            "emailInvalid": "Email inválido"
+          }
+        },
+        "successRecovery": {
+          "title": "¡Email enviado!",
+          "subtitle": "Enviamos un email a <b>{{email}}</b> con el enlace de restablecimiento de contraseña.",
+          "notReceivedButton": "No recibí el email",
+          "cancelButton": "Cerrar"
+        },
+        "lostEmail": {
+          "title": "¿No recibiste el email?",
+          "subtitle": "Revisa la carpeta de spam de tu email <b>{{email}}</b>, si no hay ningún mensaje, haz clic en ayuda.",
+          "cancelButton": "Cerrar",
+          "helpButton": "Ayuda"
+        },
+        "form": {
+          "title": "Recuperar contraseña",
+          "subtitle": "Ingresa tu email para recibir el enlace de recuperación",
+          "placeholder": "Ingresa tu email",
+          "button": "Enviar",
+          "cancel": "Cancelar",
+          "errorEmail": "Email es requerido",
+          "errorEmailInvalid": "Email inválido"
+        },
+        "success": {
+          "title": "¡Email enviado!",
+          "subtitle": "Enviamos un email a <b>{{email}}</b> con el enlace de restablecimiento de contraseña.",
+          "button": "No recibí el email",
+          "close": "Cerrar"
+        },
+        "error": {
+          "title": "Error en la solicitud",
+          "message": "Hubo un problema al enviar el email. Inténtalo de nuevo más tarde"
+        }
+      },
+      "firstAccess": {
+        "title": "¡Este es tu primer acceso!",
+        "subtitle": "Antes de comenzar, vamos a configurar tu login.\nCrea tu contraseña de acceso para ingresar."
+      },
+      "resetPassword": {
+        "title": "Redefinir contraseña",
+        "subtitle": "Crea una nueva contraseña para iniciar sesión. Esta será tu nueva contraseña de acceso al sistema.",
+        "passwordPlaceholder": "Contraseña",
+        "confirmPasswordPlaceholder": "Repetir contraseña",
+        "saveButton": "Guardar contraseña",
+        "supportLink": "haz clic aquí",
+        "supportText": "Si no hiciste esta solicitud,",
+        "successTitle": "¡Contraseña redefinida exitosamente!",
+        "successMessage": "Tu contraseña fue cambiada exitosamente. Ya puedes iniciar sesión con tu nueva contraseña.",
+        "errorTitle": "El enlace de redefinición de contraseña no está activo",
+        "errorMessage": "Por favor realiza nuevamente la solicitud de contraseña para recibir un nuevo enlace.",
+        "errors": {
+          "passwordRequired": "La contraseña es obligatoria",
+          "confirmPasswordRequired": "La confirmación de contraseña es obligatoria",
+          "passwordsNotMatch": "Las contraseñas no coinciden",
+          "passwordTooWeak": "La contraseña no cumple con los criterios de seguridad",
+          "linkExpired": "El enlace de redefinición expiró"
+        }
+      }
+    },
+    "serviceFlow": {
+      "views": {
+        "add": {
+          "fluxo": "Nombre del flujo",
+          "flows": {
+            "node": {
+              "home": "Comenzar",
+              "consent": {
+                "title": "Consentimiento de datos",
+                "description": "Complete la información",
+                "consentItems": "Ítems de consentimiento",
+                "addItem": "Agregar ítem",
+                "buttons": {
+                  "save": "Guardar"
+                },
+                "placeholders": {
+                  "descriptionConsent": "Descripción consentimiento",
+                  "nameConsent": "Consentimiento de nombre"
+                }
+              },
+              "initAttendance": {
+                "title": "Inicio de la atención",
+                "description": "Información de la pantalla inicial",
+                "orientation": "Vamos a comenzar tu proceso de registro. Durante la operación, vas a pasar por las siguientes etapas:",
+                "infoList": "*La lista de etapas de atención se mostrará debajo del texto anterior para el usuario.",
+                "buttons": {
+                  "save": "Guardar"
+                },
+                "placeholder": "Descripción del viaje"
+              },
+              "placeholder": "Para crear el flujo, seleccioná una tarjeta para comenzar la ruta y soltala acá.",
+              "signature": {
+                "title": "Captura de firma",
+                "fields": {
+                  "titleCapture": "Título de la captura",
+                  "titleSignature": "Título de la firma",
+                  "additionalText": "Texto adicional"
+                },
+                "placeholders": {
+                  "titleSignature": "Título de la firma",
+                  "additionalText": "Texto adicional"
+                }
+              },
+              "termOfUse": {
+                "title": "Términos de uso y privacidad",
+                "description": "Revisá la información",
+                "text": "Texto de los términos de uso",
+                "editText": "Editar texto",
+                "buttons": {
+                  "save": "Guardar"
+                }
+              }
+            },
+            "terms": {
+              "title": "Términos de uso"
+            }
+          },
+          "header": {
+            "saveFlow": "Guardar flujo",
+            "editTitle": "Editar título",
+            "tooltip": {
+              "title": "Necesario completar los campos",
+              "description": "Es necesario que todos los campos estén completados para guardar el flujo."
+            },
+            "modal": {
+              "delete": {
+                "title": "¿Deseas eliminar el flujo?",
+                "content": "Esta acción no se puede deshacer",
+                "confirm": "Confirmar",
+                "cancel": "Cancelar"
+              },
+              "edit": {
+                "cancel": "Cancelar",
+                "confirm": "Confirmar",
+                "content": "Editar $ {contenido}",
+                "title": "Editar título"
+              }
+            }
+          },
+          "contextMenu": {
+            "copy": "Copiar",
+            "paste": "Pegar",
+            "delete": "Eliminar",
+            "shortcuts": {
+              "copy": "CTRL+SHIFT+C",
+              "paste": "CTRL+SHIFT+V",
+              "delete": "SHIFT+Del"
+            }
+          },
+          "sideMenu": {
+            "flowCustomization": "Personalización de flujo",
+            "instructions": "Hace clic en las categorías de abajo para ver las opciones. Para agregar un elemento al flujo, solo arrastrá o hace clic.",
+            "tabs": {
+              "creation": "Creación de flujo",
+              "preview": "Vista previa"
+            }
+          },
+          "config": {
+            "languages": {
+              "pt": "Portugués",
+              "en": "Inglés",
+              "es": "Español"
+            }
+          },
+          "selectLanguage": {
+            "filling": "Idioma en el llenado"
+          },
+          "preview": {
+            "default": {
+              "hello": "Hola!",
+              "continue": "Continuar"
+            },
+            "termsOfUse": {
+              "title": "Términos de uso y privacidad",
+              "subtitle": "Para continuar, tenés que leer y aceptar los términos de uso del documento \"{title}\"."
+            }
+          }
+        },
+        "list": {
+          "title": "Flujos creados",
+          "buttons": {
+            "add": "Crear nuevo flujo"
+          },
+          "statusActive": "Activo",
+          "statusInactive": "Inactivo"
+        }
+      }
+    }
+  },
+  "api": {
+    "company": {
+      "success": {
+        "updated": "Actualizado con éxito"
+      }
+    }
+  }
+}

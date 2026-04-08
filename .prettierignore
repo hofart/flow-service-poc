@@ -1,0 +1,8 @@
+# Ignore lottie animation files
+src/shared/lotties/
+
+# Other common ignores
+node_modules/
+dist/
+coverage/
+public/mockServiceWorker.js

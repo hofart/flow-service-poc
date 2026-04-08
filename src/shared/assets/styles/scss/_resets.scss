@@ -1,0 +1,34 @@
+@use 'vsoft-design-system/resources/scss/main.scss' as *;
+
+@import '@vue-flow/core/dist/style.css';
+@import '@vue-flow/core/dist/theme-default.css';
+@import '@vue-flow/controls/dist/style.css';
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fafafa !important;
+  overflow: hidden;
+}
+
+* {
+  &::-webkit-scrollbar {
+    width: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  &:hover::-webkit-scrollbar {
+    opacity: 1;
+  }
+}
+
+.vue-flow__panel {
+  display: flex;
+}

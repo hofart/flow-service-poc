@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "router/*": ["src/router/*"],
+      "locales/*": ["public/locales/*"],
+      "core/*": ["src/core/*"],
+      "shared/*": ["src/shared/*"],
+      "modules/*": ["src/modules/*"],
+      "__mocks__/*": ["src/__mocks__/*"]
+    },
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "node",
+      "./src/shared/types/components.d.ts",
+      "./src/shared/types/design-system.d.ts",
+      "./src/shared/types/vite-env.d.ts",
+      "@testing-library/jest-dom"
+    ]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules", "dist"]
+}

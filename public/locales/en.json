@@ -1,0 +1,340 @@
+{
+  "layout": {
+    "userMenu": {
+      "logout": "Logout"
+    }
+  },
+  "global": {
+    "close": "Close",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "shared": {
+      "filters": {
+        "list": {
+          "header": {
+            "clear": "Clean",
+            "title": "Filter by period"
+          },
+          "date": {
+            "title": "Filter by period",
+            "actions": {
+              "clear": "clear date",
+              "confirm": "confirm date"
+            },
+            "presets": {
+              "7d": "7 days",
+              "15d": "15 days",
+              "1m": "1 month"
+            }
+          },
+          "sort": {
+            "title": "Sort by",
+            "options": {
+              "recent": "recent",
+              "oldest": "oldest",
+              "name": "name"
+            }
+          },
+          "status": {
+            "options": {
+              "active": "active",
+              "inactive": "inactive"
+            },
+            "title": "User status"
+          }
+        }
+      }
+    },
+    "validators": {
+      "form": {
+        "email": {
+          "invalid": "Invalid e-mail"
+        }
+      }
+    }
+  },
+  "routes": {
+    "auth": {
+      "path": "/auth",
+      "key": "auth",
+      "name": "Auth",
+      "children": {
+        "login": {
+          "path": "/auth/login",
+          "key": "authlogin",
+          "name": "Auth Login",
+          "description": ""
+        },
+        "reset": {
+          "path": "/auth/reset",
+          "key": "authreset",
+          "name": "Password Reset",
+          "description": ""
+        }
+      }
+    },
+    "home": {
+      "path": "/home",
+      "key": "home",
+      "name": "Home",
+      "children": {
+        "dashboard": {
+          "path": "",
+          "key": "homedash",
+          "name": "Home Dash",
+          "description": ""
+        }
+      }
+    },
+    "serviceFlow": {
+      "path": "/service-flow",
+      "key": "serviceflow",
+      "name": "Service flow",
+      "children": {
+        "list": {
+          "path": "/service-flow/list",
+          "key": "serviceflowlist",
+          "name": "Service Flow List",
+          "description": ""
+        },
+        "add": {
+          "path": "/service-flow/add",
+          "key": "serviceflowadd",
+          "name": "Flow Builder",
+          "description": ""
+        },
+        "edit": {
+          "path": "/service-flow/:flowId/edit",
+          "key": "serviceflowedit",
+          "name": "Edit Service Flow",
+          "title": "Edit Service Flow",
+          "description": ""
+        }
+      }
+    }
+  },
+  "modules": {
+    "auth": {
+      "leftText": "It has never been so easy and safe to know your users",
+      "forgotPassword": "Forgot your password?",
+      "recoverLink": "Recover password",
+      "form": {
+        "title": "Welcome back",
+        "subtitle": "Enter your credentials to access the system",
+        "usernamePlaceholder": "Email",
+        "passwordPlaceholder": "Password",
+        "loginButton": "Login",
+        "errors": {
+          "usernameRequired": "Email is required",
+          "passwordRequired": "Password is required",
+          "loginError": "Invalid credentials. Please try again"
+        }
+      },
+      "passwordRecovery": {
+        "formRecovery": {
+          "title": "Password Recovery",
+          "subtitle": "Enter your email to receive the recovery link",
+          "usernamePlaceholder": "Enter your email",
+          "recoveryButton": "Send",
+          "customErrorMessage": null,
+          "cancelButton": "Cancel",
+          "errors": {
+            "usernameRequired": "Email is required",
+            "emailInvalid": "Invalid email"
+          }
+        },
+        "successRecovery": {
+          "title": "Email sent!",
+          "subtitle": "We sent an email to <b>{{email}}</b> with the password reset link.",
+          "notReceivedButton": "Didn't receive the email",
+          "cancelButton": "Close"
+        },
+        "lostEmail": {
+          "title": "Didn't receive the email?",
+          "subtitle": "Check the spam folder of your email <b>{{email}}</b>, if there is no message, click help.",
+          "cancelButton": "Close",
+          "helpButton": "Help"
+        },
+        "form": {
+          "title": "Password Recovery",
+          "subtitle": "Enter your email to receive the recovery link",
+          "placeholder": "Enter your email",
+          "button": "Send",
+          "cancel": "Cancel",
+          "errorEmail": "Email is required",
+          "errorEmailInvalid": "Invalid email"
+        },
+        "success": {
+          "title": "Email sent!",
+          "subtitle": "We sent an email to <b>{{email}}</b> with the password reset link.",
+          "button": "Didn't receive the email",
+          "close": "Close"
+        },
+        "error": {
+          "title": "Request error",
+          "message": "There was a problem sending the email. Please try again later"
+        }
+      },
+      "firstAccess": {
+        "title": "This is your first access!",
+        "subtitle": "Before starting, let's set up your login.\nCreate your access password to get started."
+      },
+      "resetPassword": {
+        "title": "Reset Password",
+        "subtitle": "Create a new password to log in. This will be your new system access password.",
+        "passwordPlaceholder": "Password",
+        "confirmPasswordPlaceholder": "Repeat password",
+        "saveButton": "Save password",
+        "supportLink": "click here",
+        "supportText": "If you didn't make this request,",
+        "successTitle": "Password successfully reset!",
+        "successMessage": "Your password was changed successfully. You can now log in with your new password.",
+        "errorTitle": "The password reset link is not active",
+        "errorMessage": "Please make a new password request to receive a new link.",
+        "errors": {
+          "passwordRequired": "Password is required",
+          "confirmPasswordRequired": "Password confirmation is required",
+          "passwordsNotMatch": "Passwords do not match",
+          "passwordTooWeak": "Password does not meet security criteria",
+          "linkExpired": "The reset link has expired"
+        }
+      }
+    },
+    "serviceFlow": {
+      "views": {
+        "add": {
+          "fluxo": "Flow name",
+          "flows": {
+            "node": {
+              "home": "Start",
+              "consent": {
+                "title": "Data consent",
+                "description": "Fill in the information",
+                "consentItems": "Consent items",
+                "placeholders": {
+                  "nameConsent": "Name consent",
+                  "descriptionConsent": "Description consent"
+                },
+                "addItem": "Add item",
+                "buttons": {
+                  "save": "Save"
+                }
+              },
+              "initAttendance": {
+                "title": "Start of service",
+                "description": "Initial screen information",
+                "orientation": "Let's start your registration process. During the operation, you will go through the following steps:",
+                "infoList": "*The list of service steps will appear below the text above for the user.",
+                "buttons": {
+                  "save": "Save"
+                },
+                "placeholder": "Description of the journey"
+              },
+              "placeholder": "To create the flow, select a card to start the route and drop it here.",
+              "signature": {
+                "title": "Signature capture",
+                "fields": {
+                  "titleCapture": "Capture title",
+                  "titleSignature": "Signature title",
+                  "additionalText": "Additional text"
+                },
+                "placeholders": {
+                  "titleSignature": "Signature title",
+                  "additionalText": "Additional text"
+                }
+              },
+              "termOfUse": {
+                "title": "Terms of Use and Privacy",
+                "description": "Check the information",
+                "text": "Terms of use text",
+                "editText": "Edit text",
+                "buttons": {
+                  "save": "Save"
+                }
+              }
+            },
+            "terms": {
+              "title": "Terms of Use"
+            }
+          },
+          "header": {
+            "saveFlow": "Save flow",
+            "editTitle": "Edit title",
+            "tooltip": {
+              "title": "Required to fill in the fields",
+              "description": "All fields must be filled in to save the flow."
+            },
+            "modal": {
+              "delete": {
+                "title": "Do you want to delete the flow?",
+                "content": "This action cannot be undone",
+                "confirm": "Confirm",
+                "cancel": "Cancel"
+              },
+              "edit": {
+                "title": "Edit title",
+                "content": "Edit ${content}",
+                "confirm": "Confirm",
+                "cancel": "Cancel"
+              }
+            }
+          },
+          "contextMenu": {
+            "copy": "Copy",
+            "paste": "Paste",
+            "delete": "Delete",
+            "shortcuts": {
+              "copy": "CTRL+SHIFT+C",
+              "paste": "CTRL+SHIFT+V",
+              "delete": "SHIFT+Del"
+            }
+          },
+          "sideMenu": {
+            "flowCustomization": "Flow customization",
+            "instructions": "Click on the categories below to view the options. To add an item to the flow, just drag or click.",
+            "tabs": {
+              "creation": "Flow creation",
+              "preview": "Preview"
+            }
+          },
+          "config": {
+            "languages": {
+              "pt": "Portuguese",
+              "en": "English",
+              "es": "Spanish"
+            }
+          },
+          "selectLanguage": {
+            "filling": "Language in filling"
+          },
+          "preview": {
+            "default": {
+              "hello": "Hello!",
+              "continue": "Continue"
+            },
+            "termsOfUse": {
+              "title": "Terms of Use and Privacy",
+              "subtitle": "To proceed, you must read and agree to the terms of use in \"{title}\"."
+            }
+          }
+        },
+        "list": {
+          "title": "Created flows",
+          "buttons": {
+            "add": "Create new flow"
+          },
+          "statusActive": "Active",
+          "statusInactive": "Inactive"
+        }
+      }
+    }
+  },
+  "api": {
+    "company": {
+      "success": {
+        "updated": "Successfully updated"
+      }
+    }
+  }
+}

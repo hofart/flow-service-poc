@@ -1,0 +1,8 @@
+@forward 'variables';
+@forward 'resets';
+
+* {
+  &:disabled {
+    cursor: not-allowed !important;
+  }
+}

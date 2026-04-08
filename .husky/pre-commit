@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+npm run prettier && npm run prettier:fix && npm run lint:fix && npm run lint && npm version patch --no-git-tag-version && git add .

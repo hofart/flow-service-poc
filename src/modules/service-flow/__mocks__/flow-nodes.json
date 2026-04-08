@@ -1,0 +1,208 @@
+{
+  "flowServiceId": "0987654-12345-65432-123987",
+  "nodes": [
+    {
+      "id": "home",
+      "type": "special",
+      "connectable": true,
+      "selected": false,
+      "position": {
+        "x": 20,
+        "y": 328,
+        "z": 0
+      },
+      "data": {
+        "key": "home",
+        "label": "Início",
+        "description": "aaaa",
+        "patch": [
+          {
+            "language": "PORTUGUESE",
+            "description": "",
+            "name": "",
+            "items": []
+          },
+          {
+            "language": "ENGLISH",
+            "description": "",
+            "name": "",
+            "items": []
+          },
+          {
+            "language": "SPANISH",
+            "description": "",
+            "name": "",
+            "items": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "flow_node_b885283d-3aac-4b7b-b82e-bcae5db014c8",
+      "type": "special",
+      "connectable": true,
+      "selected": false,
+      "position": {
+        "x": 260,
+        "y": 328,
+        "z": 0
+      },
+      "data": {
+        "key": "init-attendance",
+        "label": "flow_node_b885283d-3aac-4b7b-b82e-bcae5db014c8",
+        "description": "aaaa",
+        "patch": [
+          {
+            "language": "PORTUGUESE",
+            "description": "asdasd",
+            "name": "",
+            "items": []
+          },
+          {
+            "language": "ENGLISH",
+            "description": "",
+            "name": "",
+            "items": []
+          },
+          {
+            "language": "SPANISH",
+            "description": "",
+            "name": "",
+            "items": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "flow_node_b8ed536b-9a9a-499d-b883-bd7d8c853be1",
+      "type": "special",
+      "connectable": true,
+      "selected": false,
+      "position": {
+        "x": 580,
+        "y": 328,
+        "z": 0
+      },
+      "data": {
+        "key": "terms-of-use",
+        "label": "flow_node_b8ed536b-9a9a-499d-b883-bd7d8c853be1",
+        "description": "aaaa",
+        "patch": [
+          {
+            "language": "PORTUGUESE",
+            "description": "",
+            "name": "asdadasd",
+            "items": []
+          },
+          {
+            "language": "ENGLISH",
+            "description": "",
+            "name": "asdadda",
+            "items": []
+          },
+          {
+            "language": "SPANISH",
+            "description": "",
+            "name": "",
+            "items": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "flow_node_64cdf1b2-557f-46f7-bb09-6fc8de73e794",
+      "type": "special",
+      "connectable": true,
+      "selected": false,
+      "position": {
+        "x": 900,
+        "y": 328,
+        "z": 0
+      },
+      "data": {
+        "key": "consents",
+        "label": "flow_node_64cdf1b2-557f-46f7-bb09-6fc8de73e794",
+        "description": "aaaa",
+        "patch": [
+          {
+            "language": "PORTUGUESE",
+            "description": "asdsadad",
+            "name": "asdasdsa",
+            "items": []
+          },
+          {
+            "language": "ENGLISH",
+            "description": "asdsa",
+            "name": "asdas",
+            "items": []
+          },
+          {
+            "language": "SPANISH",
+            "description": "",
+            "name": "",
+            "items": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "flow_node_92381598-b6a9-4fba-90cf-2bf018afb601",
+      "description": "aaaa",
+      "type": "special",
+      "connectable": true,
+      "selected": false,
+      "position": {
+        "x": 1220,
+        "y": 328,
+        "z": 0
+      },
+      "data": {
+        "key": "signature",
+        "label": "flow_node_92381598-b6a9-4fba-90cf-2bf018afb601",
+        "description": "aaaa",
+        "patch": [
+          {
+            "language": "PORTUGUESE",
+            "description": "aaaa",
+            "name": "",
+            "items": []
+          },
+          {
+            "language": "ENGLISH",
+            "description": "",
+            "name": "asdadas",
+            "items": []
+          },
+          {
+            "language": "SPANISH",
+            "description": "",
+            "name": "",
+            "items": []
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "ehome->flow_node_b885283d-3aac-4b7b-b82e-bcae5db014c8",
+      "source": "home",
+      "target": "flow_node_b885283d-3aac-4b7b-b82e-bcae5db014c8"
+    },
+    {
+      "id": "eflow_node_b885283d-3aac-4b7b-b82e-bcae5db014c8->flow_node_b8ed536b-9a9a-499d-b883-bd7d8c853be1",
+      "source": "flow_node_b885283d-3aac-4b7b-b82e-bcae5db014c8",
+      "target": "flow_node_b8ed536b-9a9a-499d-b883-bd7d8c853be1"
+    },
+    {
+      "id": "eflow_node_b8ed536b-9a9a-499d-b883-bd7d8c853be1->flow_node_64cdf1b2-557f-46f7-bb09-6fc8de73e794",
+      "source": "flow_node_b8ed536b-9a9a-499d-b883-bd7d8c853be1",
+      "target": "flow_node_64cdf1b2-557f-46f7-bb09-6fc8de73e794"
+    },
+    {
+      "id": "eflow_node_64cdf1b2-557f-46f7-bb09-6fc8de73e794->flow_node_92381598-b6a9-4fba-90cf-2bf018afb601",
+      "source": "flow_node_64cdf1b2-557f-46f7-bb09-6fc8de73e794",
+      "target": "flow_node_92381598-b6a9-4fba-90cf-2bf018afb601"
+    }
+  ]
+}

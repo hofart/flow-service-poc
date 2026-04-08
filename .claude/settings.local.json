@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(xargs ls:*)",
+      "Bash(npm install:*)",
+      "Bash(npx vue-tsc:*)",
+      "Bash(npm run:*)",
+      "Bash(find /c/dev/estudos/flow-service-poc/src -type f \\\\\\( -name \"*.ts\" -o -name \"*.tsx\" -o -name \"*.vue\" \\\\\\) -exec wc -l {} +)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); keys=[k for k in d.keys\\(\\)]; print\\(keys\\)\")",
+      "Bash(node -e \"const d=require\\('./public/locales/pt.json'\\); console.log\\(JSON.stringify\\(Object.keys\\(d.routes\\), null, 2\\)\\);\")",
+      "Bash(node -e \"const d=require\\('./public/locales/en.json'\\); console.log\\('en modules:', Object.keys\\(d.modules\\)\\); console.log\\('en routes:', Object.keys\\(d.routes\\)\\);\")",
+      "Bash(node:*)",
+      "Bash(ls -la /c/dev/estudos/flow-service-poc/*.*)",
+      "Bash(du -sh \"C:/dev/estudos/flow-service-poc\"/*)"
+    ]
+  }
+}

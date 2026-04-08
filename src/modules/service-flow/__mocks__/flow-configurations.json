@@ -1,0 +1,19 @@
+{
+  "oid": "0987654-12345-65432-123987",
+  "name": "Fluxo de Onboarding Digital - Certfy",
+  "languages": [
+    {
+      "key": "PORTUGUESE",
+      "selected": true
+    },
+    {
+      "key": "ENGLISH",
+      "selected": false
+    },
+    {
+      "key": "SPANISH",
+      "selected": false
+    }
+  ],
+  "isActive": true
+}
