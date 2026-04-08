@@ -19,7 +19,7 @@
       border-radius="12px 12px 0 0"
     >
       <v-box direction="row" align="center" gap="0.5em" padding="4px">
-        <img src="shared/assets/images/logo.png" alt="Logo" width="32" />
+        <img src="/logo.jpeg" alt="Logo" width="32" />
         <v-text color="white" font-size="18px">Certfy</v-text>
       </v-box>
       <v-box

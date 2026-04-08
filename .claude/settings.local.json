@@ -12,7 +12,8 @@
       "Bash(node -e \"const d=require\\('./public/locales/en.json'\\); console.log\\('en modules:', Object.keys\\(d.modules\\)\\); console.log\\('en routes:', Object.keys\\(d.routes\\)\\);\")",
       "Bash(node:*)",
       "Bash(ls -la /c/dev/estudos/flow-service-poc/*.*)",
-      "Bash(du -sh \"C:/dev/estudos/flow-service-poc\"/*)"
+      "Bash(du -sh \"C:/dev/estudos/flow-service-poc\"/*)",
+      "Bash(yarn add:*)"
     ]
   }
 }

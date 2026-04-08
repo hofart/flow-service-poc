@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useErrorHandler } from 'shared/hooks/useErrorHandler';
 import { getMockSettings } from 'shared/utils/mock';
 import { getAccessToken } from 'shared/utils/localStorage';
 
@@ -22,12 +21,3 @@ http.interceptors.request.use((config) => {
   return config;
 });
 
-http.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    const { handleError } = useErrorHandler();
-    const message = error?.response?.data?.message ?? error?.message ?? 'Request error';
-    handleError('api', 'HTTP request error', { context: 'HttpError' }, message);
-    return Promise.reject(error);
-  }
-);
