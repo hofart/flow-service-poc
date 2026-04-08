@@ -6,17 +6,9 @@ export const createAppRouter = () => {
     {
       path: '/',
       name: 'root',
-      redirect: '/service-flow/list',
+      redirect: '/service-flow/add',
     },
     createServiceFlowRoutes(),
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'not-found',
-      component: { template: '<div>404 - Not Found</div>' },
-      meta: {
-        requiresAuth: false,
-      },
-    },
   ];
 
   const router = createRouter({

@@ -1,6 +1,7 @@
 import { defineStore, storeToRefs } from 'pinia';
 import { useLanguage } from 'shared/hooks/useLanguage';
 import { computed, ComputedRef, ref, watch } from 'vue';
+import { Node } from '@vue-flow/core';
 import { useFlowBuilderNodes } from './useFlowBuilderNodes';
 import { PatchType } from 'shared/models/service-flow-nodes.interface';
 import enFlag from 'shared/assets/images/flags/en.svg';
@@ -99,7 +100,7 @@ export const useFlowBuilderConfig = defineStore('flowBuilderConfig', () => {
     });
 
   const isAnyNodeEmpty = (lang: string) => {
-    const allNodes = nodes.value.filter((node) => node.id !== 'home');
+    const allNodes = (nodes.value as Node[]).filter((node) => node.id !== 'home');
 
     if (!allNodes.length) {
       return true;

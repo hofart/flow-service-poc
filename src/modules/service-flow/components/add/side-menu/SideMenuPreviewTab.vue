@@ -41,7 +41,9 @@
   );
 
   const flow = computed(() =>
-    nodes.value.filter((n) => n.data.key !== PREVIEW_FLOW.HOME).map(nodeName)
+    (nodes.value as unknown as any[])
+      .filter((n) => n.data.key !== PREVIEW_FLOW.HOME)
+      .map(nodeName)
   );
 
   const props = computed(() => ({

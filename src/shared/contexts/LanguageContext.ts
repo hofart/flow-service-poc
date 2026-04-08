@@ -12,9 +12,9 @@ import {
 
 type LanguageSettingsState = {
   language:
-    | ELanguageType.English
-    | ELanguageType.Portuguese
-    | ELanguageType.Spanish;
+    | ELanguageType.En
+    | ELanguageType.PtBr
+    | ELanguageType.Es;
 };
 
 export type LanguageTypes = LanguageSettingsState['language'];

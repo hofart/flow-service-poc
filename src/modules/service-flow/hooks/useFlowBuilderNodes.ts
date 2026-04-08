@@ -87,7 +87,7 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
   };
 
   const getNodePositionY = (nodeId: string) => {
-    const node = nodes.value.find((n) => n.id === nodeId);
+    const node = (nodes.value as unknown as any[]).find((n) => n.id === nodeId);
 
     if (node && typeof node.position?.y === 'number') {
       return node.position.y;
@@ -99,7 +99,9 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
   const getNewNodePosition = async () => {
     await nextTick();
 
-    const others = nodes.value.filter((n) => n.id !== 'home');
+    const others = (nodes.value as unknown as any[]).filter(
+      (n) => n.id !== 'home'
+    ) as Node[];
 
     const includeHome = others.length > 0;
 
@@ -114,7 +116,9 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
 
       const width = el?.getBoundingClientRect().width ?? DEFAULT_WIDTH;
 
-      const original = nodes.value.find((n) => n.id === node.id);
+      const original = (nodes.value as unknown as any[]).find(
+        (n) => n.id === node.id
+      );
 
       const y = original?.position.y ?? DEFAULT_Y;
 
@@ -128,11 +132,13 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
 
     nodes.value = updatedNodes;
 
-    edges.value = updatedNodes.slice(1).map((node, i) => ({
-      id: `e${updatedNodes[i].id}->${node.id}`,
-      source: updatedNodes[i].id,
-      target: node.id,
-    }));
+    edges.value = (updatedNodes as unknown as any[])
+      .slice(1)
+      .map((node, i) => ({
+        id: `e${updatedNodes[i].id}->${node.id}`,
+        source: updatedNodes[i].id,
+        target: node.id,
+      })) as Edge[];
   };
 
   const focusToNewNode = (nodeId: string) => {
@@ -178,7 +184,10 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
   const createNewNode = async (key?: string, patch?: ItemPatch) => {
     const newNode = createDataNode(key, patch);
 
-    nodes.value = [...nodes.value.filter((n) => n.id !== 'home'), newNode];
+    const filtered = (nodes.value as unknown as any[]).filter(
+      (n) => n.id !== 'home'
+    ) as Node[];
+    nodes.value = [...filtered, newNode];
 
     await afterCreateNewNode(newNode.id);
   };
@@ -209,11 +218,15 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
       return;
     }
 
-    const node = selectedNode.value;
+    const nodeId = selectedNode.value.id;
 
-    removeNodes([node.id]);
+    removeNodes([nodeId]);
 
-    nodes.value = nodes.value.filter((n) => n.id !== node.id);
+    const index = nodes.value.findIndex((n) => n.id === nodeId);
+
+    if (index !== -1) {
+      nodes.value.splice(index, 1);
+    }
 
     await getNewNodePosition();
   };
@@ -253,7 +266,9 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
 
     const newNode = createDataNode(key, patch);
 
-    const list = nodes.value.filter((n) => n.id !== 'home');
+    const list = (nodes.value as unknown as any[]).filter(
+      (n) => n.id !== 'home'
+    ) as Node[];
 
     if (selectedNode.value) {
       const idx = list.findIndex((n) => n.id === selectedNode.value?.id);
@@ -380,23 +395,25 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
   const updateNodeData = <T>(params: ParamsUpdateNode<T>) => {
     const { patch, nodeId, key } = params;
 
-    nodes.value = nodes.value.map((node) => {
-      if (node.id !== nodeId) {
-        return node;
-      }
+    const node = (nodes.value as unknown as any[]).find(
+      (n) => n.id === nodeId
+    ) as { data: Record<string, unknown> } | undefined;
 
-      const payload = { currentPatch: node.data.patch, patch, key };
+    if (!node) {
+      return;
+    }
 
-      const updatedPatch = updateValueByLanguage(payload);
+    const payload = {
+      currentPatch: node.data.patch as PatchType[],
+      patch,
+      key,
+    };
 
-      const data = { ...node.data, patch: updatedPatch };
-
-      return { ...node, data };
-    });
+    node.data.patch = updateValueByLanguage(payload);
   };
 
   const addConsentItem = (nodeId: string, item: any) => {
-    const node = nodes.value.find((n) => n.id === nodeId);
+    const node = (nodes.value as unknown as any[]).find((n) => n.id === nodeId);
 
     if (!node) {
       return;
@@ -413,7 +430,7 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
 
   const updateConsentItem = (params: ParamsUpdateConsentItem) => {
     const { nodeId, index, patch } = params;
-    const node = nodes.value.find((n) => n.id === nodeId);
+    const node = (nodes.value as unknown as any[]).find((n) => n.id === nodeId);
 
     if (!node) {
       return;

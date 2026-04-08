@@ -1,5 +1,6 @@
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import federation from '@originjs/vite-plugin-federation';
 import path from 'path';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -10,6 +11,21 @@ export default defineConfig(({ mode }) => ({
     vue(),
     tsconfigPaths(),
     vueJsx(),
+    federation({
+      name: 'flow_service_remote',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './ServiceFlowModule': './src/modules/service-flow/router/routes.ts',
+      },
+      shared: {
+        vue: { singleton: true, requiredVersion: '^3.5.13' },
+        'vue-router': { singleton: true, requiredVersion: '^4.0.3' },
+        pinia: { singleton: true, requiredVersion: '^2.3.0' },
+        i18next: { singleton: true },
+        'i18next-vue': { singleton: true },
+        'vsoft-design-system': { singleton: true },
+      },
+    }),
     mode === 'production' &&
       process.env.VITE_SENTRY_DSN &&
       sentryVitePlugin({
@@ -50,6 +66,7 @@ locales: path.resolve(__dirname, './public/locales'),
     allowedHosts: true,
   },
   build: {
+    target: 'esnext',
     commonjsOptions: { transformMixedEsModules: true },
     sourcemap: true,
   },
