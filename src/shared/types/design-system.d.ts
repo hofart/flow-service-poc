@@ -10,6 +10,7 @@ type GlobalVSoftDesignSystemCompositions = ComponentMap<typeof Compositions>;
 
 declare module 'vue' {
   export interface GlobalComponents
-    extends GlobalVSoftDesignSystemComponents,
+    extends
+      GlobalVSoftDesignSystemComponents,
       GlobalVSoftDesignSystemCompositions {}
 }

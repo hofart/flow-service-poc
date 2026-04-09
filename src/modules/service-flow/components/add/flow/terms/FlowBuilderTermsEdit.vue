@@ -30,9 +30,7 @@
             :left="true"
           />
         </v-box>
-        <v-text white-space="nowrap">
-          {{ $t('modules.serviceFlow.views.add.flows.terms.title') }}
-        </v-text>
+        <v-text white-space="nowrap">Termos de uso</v-text>
       </v-box>
       <v-button icon-button icon="times" @click="handleCloseTermsEdit()" />
     </v-box>

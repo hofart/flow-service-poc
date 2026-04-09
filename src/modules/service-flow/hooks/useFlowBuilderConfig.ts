@@ -1,5 +1,4 @@
 import { defineStore, storeToRefs } from 'pinia';
-import { useLanguage } from 'shared/hooks/useLanguage';
 import { computed, ComputedRef, ref, watch } from 'vue';
 import { Node } from '@vue-flow/core';
 import { useFlowBuilderNodes } from './useFlowBuilderNodes';
@@ -8,7 +7,6 @@ import enFlag from 'shared/assets/images/flags/en.svg';
 import esFlag from 'shared/assets/images/flags/es.svg';
 import ptFlag from 'shared/assets/images/flags/pt.svg';
 import { useServiceFlow } from './useServiceFlow';
-import { useTranslation } from 'i18next-vue';
 
 export interface Lang {
   key: string;
@@ -21,10 +19,6 @@ export const useFlowBuilderConfig = defineStore('flowBuilderConfig', () => {
   const storeFlowNodes = useFlowBuilderNodes();
 
   const storeServiceFlow = useServiceFlow();
-
-  const { language } = useLanguage();
-
-  const { t } = useTranslation();
 
   const { nodes } = storeToRefs(storeFlowNodes);
 
@@ -39,19 +33,19 @@ export const useFlowBuilderConfig = defineStore('flowBuilderConfig', () => {
   const allLangs = ref<Lang[]>([
     {
       key: 'PORTUGUESE',
-      label: t('modules.serviceFlow.views.add.config.languages.pt'),
+      label: 'Português',
       image: ptFlag,
       disabled: false,
     },
     {
       key: 'ENGLISH',
-      label: t('modules.serviceFlow.views.add.config.languages.en'),
+      label: 'English',
       image: enFlag,
       disabled: false,
     },
     {
       key: 'SPANISH',
-      label: t('modules.serviceFlow.views.add.config.languages.es'),
+      label: 'Español',
       image: esFlag,
       disabled: false,
     },
@@ -100,7 +94,9 @@ export const useFlowBuilderConfig = defineStore('flowBuilderConfig', () => {
     });
 
   const isAnyNodeEmpty = (lang: string) => {
-    const allNodes = (nodes.value as Node[]).filter((node) => node.id !== 'home');
+    const allNodes = (nodes.value as Node[]).filter(
+      (node) => node.id !== 'home'
+    );
 
     if (!allNodes.length) {
       return true;
@@ -123,7 +119,7 @@ export const useFlowBuilderConfig = defineStore('flowBuilderConfig', () => {
     () => selectedKeysLangs.value,
     (langs) => {
       if (!langs.length) {
-        currentLang.value = allLangs.value.find(({ key }) => key === language)!;
+        currentLang.value = allLangs.value[0];
       }
     },
     { immediate: true }

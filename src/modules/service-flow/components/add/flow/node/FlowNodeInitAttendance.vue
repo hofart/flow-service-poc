@@ -1,20 +1,10 @@
 <template>
   <flow-node-container v-bind="data" class="c-flow-builder-card-init">
-    <v-text font-size="12px">
-      {{
-        $t(
-          'modules.serviceFlow.views.add.flows.node.initAttendance.description'
-        )
-      }}
-    </v-text>
+    <v-text font-size="12px">Informações da tela inicial</v-text>
 
     <v-input
       multiline
-      :placeholder="
-        $t(
-          'modules.serviceFlow.views.add.flows.node.initAttendance.placeholder'
-        )
-      "
+      placeholder="Descrição da jornada"
       :rows="4"
       hide-label
       v-model="dataNode.description"
@@ -22,9 +12,8 @@
     />
 
     <v-text font-size="12px" margin="1em 0 1em">
-      {{
-        $t('modules.serviceFlow.views.add.flows.node.initAttendance.infoList')
-      }}
+      *A listagem com as etapas de atendimento será exibida abaixo do texto
+      acima para o usuário.
     </v-text>
   </flow-node-container>
 </template>
@@ -34,13 +23,10 @@
   import { computed } from 'vue';
   import { useFlowBuilderNodes } from 'modules/service-flow/hooks/useFlowBuilderNodes';
   import FlowNodeContainer from './FlowNodeContainer.vue';
-  import { useTranslation } from 'i18next-vue';
 
   const props = defineProps<NodeProps>();
 
   const { updateNodeData, getValueByLanguage } = useFlowBuilderNodes();
-
-  const { t } = useTranslation();
 
   const dataNode = computed(() => getValueByLanguage(props.data.patch));
 
@@ -61,6 +47,6 @@
   const data = computed(() => ({
     ...props,
     color: '#838383',
-    title: t('modules.serviceFlow.views.add.flows.node.initAttendance.title'),
+    title: 'Início do atendimento',
   }));
 </script>

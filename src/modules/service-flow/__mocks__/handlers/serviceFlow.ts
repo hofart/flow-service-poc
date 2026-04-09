@@ -72,7 +72,10 @@ export const serviceFlowHandlers = [
     const search = url.searchParams.get('search') ?? '';
 
     if (!limit) {
-      return HttpResponse.json({ message: 'limit is required' }, { status: 400 });
+      return HttpResponse.json(
+        { message: 'limit is required' },
+        { status: 400 }
+      );
     }
 
     let filteredItems = mockItems;
@@ -98,7 +101,10 @@ export const serviceFlowHandlers = [
   http.get('/api/service-flows/:flowId/nodes', async ({ params }) => {
     const { flowId } = params;
     if (!flowId) {
-      return HttpResponse.json({ message: 'flowId is required' }, { status: 400 });
+      return HttpResponse.json(
+        { message: 'flowId is required' },
+        { status: 400 }
+      );
     }
     return HttpResponse.json({ nodes: mockNodes, edges: mockEdges });
   }),
@@ -106,7 +112,10 @@ export const serviceFlowHandlers = [
   // GET /api/service-flows/:flowId/configuration
   http.get('/api/service-flows/:flowId/configuration', async () => {
     if (!serviceFlowConfigurationMock) {
-      return HttpResponse.json({ message: 'Configuration not found' }, { status: 404 });
+      return HttpResponse.json(
+        { message: 'Configuration not found' },
+        { status: 404 }
+      );
     }
     return HttpResponse.json(serviceFlowConfigurationMock);
   }),
@@ -119,9 +128,15 @@ export const serviceFlowHandlers = [
   // POST /api/service-flows
   http.post('/api/service-flows', async ({ request }) => {
     await delay(2000);
-    const body = await request.json() as { name?: string; languages?: string[] };
+    const body = (await request.json()) as {
+      name?: string;
+      languages?: string[];
+    };
     if (!body?.name) {
-      return HttpResponse.json({ message: 'name is required' }, { status: 400 });
+      return HttpResponse.json(
+        { message: 'name is required' },
+        { status: 400 }
+      );
     }
     const newFlow: ServiceFlowItem = {
       oid: uuidv4(),
@@ -140,34 +155,59 @@ export const serviceFlowHandlers = [
     await delay(2000);
     const { flowId } = params;
     if (!flowId) {
-      return HttpResponse.json({ message: 'flowId is required' }, { status: 400 });
+      return HttpResponse.json(
+        { message: 'flowId is required' },
+        { status: 400 }
+      );
     }
-    const body = await request.json() as { nodes?: FlowNode[]; edges?: FlowEdge[] };
+    const body = (await request.json()) as {
+      nodes?: FlowNode[];
+      edges?: FlowEdge[];
+    };
     mockNodes = body?.nodes ?? mockNodes;
     mockEdges = body?.edges ?? mockEdges;
-    return HttpResponse.json({ nodes: mockNodes, edges: mockEdges }, { status: 201 });
+    return HttpResponse.json(
+      { nodes: mockNodes, edges: mockEdges },
+      { status: 201 }
+    );
   }),
 
   // PUT /api/service-flows/:flowId/configuration
-  http.put('/api/service-flows/:flowId/configuration', async ({ params, request }) => {
-    await delay(1000);
-    const { flowId } = params;
-    if (!flowId) {
-      return HttpResponse.json({ message: 'flowId is required' }, { status: 400 });
+  http.put(
+    '/api/service-flows/:flowId/configuration',
+    async ({ params, request }) => {
+      await delay(1000);
+      const { flowId } = params;
+      if (!flowId) {
+        return HttpResponse.json(
+          { message: 'flowId is required' },
+          { status: 400 }
+        );
+      }
+      const body =
+        (await request.json()) as Partial<ServiceFlowConfigurationResponse>;
+      serviceFlowConfigurationMock = {
+        ...serviceFlowConfigurationMock,
+        ...body,
+      };
+      return HttpResponse.json(serviceFlowConfigurationMock);
     }
-    const body = await request.json() as Partial<ServiceFlowConfigurationResponse>;
-    serviceFlowConfigurationMock = { ...serviceFlowConfigurationMock, ...body };
-    return HttpResponse.json(serviceFlowConfigurationMock);
-  }),
+  ),
 
   // PUT /api/service-flows/:flowId/nodes
   http.put('/api/service-flows/:flowId/nodes', async ({ params, request }) => {
     await delay(1000);
     const { flowId } = params;
     if (!flowId) {
-      return HttpResponse.json({ message: 'flowId is required' }, { status: 400 });
+      return HttpResponse.json(
+        { message: 'flowId is required' },
+        { status: 400 }
+      );
     }
-    const body = await request.json() as { nodes?: FlowNode[]; edges?: FlowEdge[] };
+    const body = (await request.json()) as {
+      nodes?: FlowNode[];
+      edges?: FlowEdge[];
+    };
     mockNodes = body?.nodes ?? mockNodes;
     mockEdges = body?.edges ?? mockEdges;
     return HttpResponse.json({ nodes: mockNodes, edges: mockEdges });
@@ -180,29 +220,38 @@ export const serviceFlowHandlers = [
   }),
 
   // PATCH /api/service-flows/:flowId/status
-  http.patch('/api/service-flows/:flowId/status', async ({ params, request }) => {
-    await delay(500);
-    const { flowId } = params;
-    const body = await request.json() as { isActive?: boolean };
+  http.patch(
+    '/api/service-flows/:flowId/status',
+    async ({ params, request }) => {
+      await delay(500);
+      const { flowId } = params;
+      const body = (await request.json()) as { isActive?: boolean };
 
-    const idx = mockItems.findIndex((item) => item.oid === flowId);
-    if (idx === -1) {
-      return HttpResponse.json({ message: 'Fluxo não encontrado' }, { status: 404 });
+      const idx = mockItems.findIndex((item) => item.oid === flowId);
+      if (idx === -1) {
+        return HttpResponse.json(
+          { message: 'Fluxo não encontrado' },
+          { status: 404 }
+        );
+      }
+
+      mockItems[idx] = { ...mockItems[idx], isActive: Boolean(body?.isActive) };
+      return HttpResponse.json({
+        id: flowId,
+        message: `Status atualizado para ${body?.isActive ? 'ativo' : 'inativo'}`,
+      });
     }
-
-    mockItems[idx] = { ...mockItems[idx], isActive: Boolean(body?.isActive) };
-    return HttpResponse.json({
-      id: flowId,
-      message: `Status atualizado para ${body?.isActive ? 'ativo' : 'inativo'}`,
-    });
-  }),
+  ),
 
   // DELETE /api/service-flows/:flowId
   http.delete('/api/service-flows/:flowId', async ({ params }) => {
     await delay(1000);
     const { flowId } = params;
     if (!flowId) {
-      return HttpResponse.json({ message: 'flowId is required' }, { status: 400 });
+      return HttpResponse.json(
+        { message: 'flowId is required' },
+        { status: 400 }
+      );
     }
     const idx = mockItems.findIndex((item) => item.oid === flowId);
     if (idx === -1) {
@@ -217,7 +266,10 @@ export const serviceFlowHandlers = [
     await delay(1000);
     const { flowId } = params;
     if (!flowId) {
-      return HttpResponse.json({ message: 'flowId is required' }, { status: 400 });
+      return HttpResponse.json(
+        { message: 'flowId is required' },
+        { status: 400 }
+      );
     }
     mockNodes = [];
     mockEdges = [];

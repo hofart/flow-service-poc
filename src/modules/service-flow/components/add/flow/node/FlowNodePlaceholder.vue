@@ -15,7 +15,7 @@
       line-height="1.3"
       margin="0.4em 0 0"
     >
-      {{ $t('modules.serviceFlow.views.add.flows.node.placeholder') }}
+      Para criar o fluxo, selecione um card para começar a rota e solte aqui.
     </v-text>
   </v-box>
 </template>

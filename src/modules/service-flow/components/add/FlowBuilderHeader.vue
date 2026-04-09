@@ -40,19 +40,16 @@
         <template #content v-if="!disableSaveButton">
           <v-box width="280px">
             <v-text text-align="left" font-weight="600">
-              {{ $t('modules.serviceFlow.views.add.header.tooltip.title') }}
+              Necessário preencher os campos
             </v-text>
             <v-text text-align="left" font-size="13px">
-              {{
-                $t('modules.serviceFlow.views.add.header.tooltip.description')
-              }}
+              É preciso que todos os campos estejam preenchidos para salvar o
+              fluxo.
             </v-text>
           </v-box>
         </template>
         <template #target>
-          <v-button :disabled="!disableSaveButton">
-            {{ $t('modules.serviceFlow.views.add.header.saveFlow') }}
-          </v-button>
+          <v-button :disabled="!disableSaveButton">Salvar fluxo</v-button>
         </template>
       </v-tooltip>
     </v-box>
@@ -67,7 +64,6 @@
   import { useModal } from 'vsoft-design-system';
   import { computed } from 'vue';
   import FormHeader from './config/FormHeader.vue';
-  import { useTranslation } from 'i18next-vue';
 
   const storeFlowBuilderNodes = useFlowBuilderNodes();
 
@@ -80,8 +76,6 @@
   const { handleDeleteAll } = storeFlowBuilderNodes;
 
   const { open, close } = useModal();
-
-  const { t } = useTranslation();
 
   const disableSaveButton = computed(
     () => !hasNodes.value && hasPartialFilledLang.value
@@ -96,24 +90,20 @@
       id: modalDeleteId,
       modalImage: 'delete',
       modalTitle: '',
-      modalSubTitle: t(
-        'modules.serviceFlow.views.add.header.modal.delete.title'
-      ),
-      modalContent: t(
-        'modules.serviceFlow.views.add.header.modal.delete.content'
-      ),
+      modalSubTitle: 'Deseja excluir o fluxo?',
+      modalContent: 'Essa ação não pode ser desfeita',
       showFooter: true,
       hideHeader: true,
       alert: true,
       buttonPrimary: {
-        text: t('modules.serviceFlow.views.add.header.modal.delete.confirm'),
+        text: 'Confirmar',
         action: () => {
           handleDeleteAll();
           close(modalDeleteId);
         },
       },
       buttonSecondary: {
-        text: t('modules.serviceFlow.views.add.header.modal.delete.cancel'),
+        text: 'Cancelar',
         action: () => close(modalDeleteId),
       },
     });
@@ -122,19 +112,19 @@
   const handleEditTitle = () => {
     open({
       id: modalEditId,
-      modalTitle: t('modules.serviceFlow.views.add.header.modal.edit.title'),
+      modalTitle: 'Editar título',
       showFooter: true,
       alert: true,
       component: FormHeader,
       buttonPrimary: {
-        text: t('modules.serviceFlow.views.add.header.modal.edit.confirm'),
+        text: 'Confirmar',
         action: () => {
           handleDeleteAll();
           close(modalEditId);
         },
       },
       buttonSecondary: {
-        text: t('modules.serviceFlow.views.add.header.modal.edit.cancel'),
+        text: 'Cancelar',
         action: () => close(modalEditId),
       },
     });

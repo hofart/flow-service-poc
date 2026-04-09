@@ -9,7 +9,7 @@ import { sentryVitePlugin } from '@sentry/vite-plugin';
 export default defineConfig(({ mode }) => ({
   plugins: [
     vue(),
-    tsconfigPaths(),
+    tsconfigPaths({ projects: ['tsconfig.json'] }),
     vueJsx(),
     federation({
       name: 'flow_service_remote',
@@ -21,8 +21,6 @@ export default defineConfig(({ mode }) => ({
         vue: { singleton: true, requiredVersion: '^3.5.13' },
         'vue-router': { singleton: true, requiredVersion: '^4.0.3' },
         pinia: { singleton: true, requiredVersion: '^2.3.0' },
-        i18next: { singleton: true },
-        'i18next-vue': { singleton: true },
         'vsoft-design-system': { singleton: true },
       },
     }),
@@ -55,7 +53,6 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       router: path.resolve(__dirname, './src/router'),
-locales: path.resolve(__dirname, './public/locales'),
       core: path.resolve(__dirname, './src/core'),
       shared: path.resolve(__dirname, './src/shared'),
       modules: path.resolve(__dirname, './src/modules'),

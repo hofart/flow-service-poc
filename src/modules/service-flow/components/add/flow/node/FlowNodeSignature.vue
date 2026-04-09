@@ -2,15 +2,11 @@
   <flow-node-container v-bind="data" class="c-flow-builder-card-init">
     <v-box margin="0 0 " padding="0">
       <v-text font-size="13px" :color="data.color">
-        {{ $t('modules.serviceFlow.views.add.flows.node.signature.title') }}
+        Captura de assinatura
       </v-text>
       <v-input
         hide-label
-        :placeholder="
-          $t(
-            'modules.serviceFlow.views.add.flows.node.signature.placeholders.titleSignature'
-          )
-        "
+        placeholder="Título da assinatura"
         size="medium"
         v-model="dataNode.name"
         @change="handleUpdate($event, 'name')"
@@ -21,21 +17,13 @@
         :color="data.color"
         margin="1em 0"
       >
-        {{
-          $t(
-            'modules.serviceFlow.views.add.flows.node.signature.fields.additionalText'
-          )
-        }}
+        Texto adicional
       </v-text>
       <v-input
         multiline
         :rows="6"
         hide-label
-        :placeholder="
-          $t(
-            'modules.serviceFlow.views.add.flows.node.signature.placeholders.additionalText'
-          )
-        "
+        placeholder="Texto adicional"
         v-model="dataNode.description"
         @change="handleUpdate($event, 'description')"
       />
@@ -48,9 +36,6 @@
   import { computed } from 'vue';
   import { useFlowBuilderNodes } from 'modules/service-flow/hooks/useFlowBuilderNodes';
   import FlowNodeContainer from './FlowNodeContainer.vue';
-  import { useTranslation } from 'i18next-vue';
-
-  const { t } = useTranslation();
 
   const props = defineProps<NodeProps>();
 
@@ -75,6 +60,6 @@
   const data = computed(() => ({
     ...props,
     color: '#B05066',
-    title: t('modules.serviceFlow.views.add.flows.node.signature.title'),
+    title: 'Captura de assinatura',
   }));
 </script>

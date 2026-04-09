@@ -1,7 +1,5 @@
 import '@testing-library/jest-dom';
 import { config } from '@vue/test-utils';
-import i18next from 'i18next';
-import i18nextVue from 'i18next-vue';
 import { afterAll, beforeAll, vi } from 'vitest';
 import DesignSystem from 'vsoft-design-system';
 import MainLayout from './src/shared/layouts/MainLayout.vue';
@@ -9,7 +7,7 @@ import MainLayout from './src/shared/layouts/MainLayout.vue';
 const globalConfigBackup = config.global;
 
 beforeAll(() => {
-  config.global.plugins.unshift([DesignSystem, {}, [i18nextVue, { i18next }]]);
+  config.global.plugins.unshift([DesignSystem]);
   config.global.components = {
     'main-layout': MainLayout,
   };
@@ -32,19 +30,3 @@ beforeAll(() => {
 afterAll(() => {
   config.global = globalConfigBackup;
 });
-
-vi.mock('i18next-vue', () => ({
-  default: {
-    install: () => {},
-  },
-  useTranslation: () => ({
-    t: (key: string) => key,
-  }),
-}));
-
-vi.mock('shared/contexts/LanguageContext', () => ({
-  useLanguage: () => ({
-    t: (key: string) => key,
-    currentLanguage: 'PORTUGUESE',
-  }),
-}));

@@ -79,11 +79,7 @@
           >
             <v-tooltip position="bottom">
               <template #content>
-                <v-text text-align="left">
-                  {{
-                    $t('modules.serviceFlow.views.add.selectLanguage.filling')
-                  }}
-                </v-text>
+                <v-text text-align="left">Idioma em preenchimento</v-text>
               </template>
               <template #target>
                 <v-icon

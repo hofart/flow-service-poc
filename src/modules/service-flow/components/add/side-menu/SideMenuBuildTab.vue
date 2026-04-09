@@ -1,10 +1,11 @@
 <template>
   <v-box>
     <v-text tag="strong" font-size="17px" margin="0 0 0.6em">
-      {{ $t('modules.serviceFlow.views.add.sideMenu.flowCustomization') }}
+      Customização de fluxo
     </v-text>
     <v-text tag="span" color="#3A3A3A99">
-      {{ $t('modules.serviceFlow.views.add.sideMenu.instructions') }}
+      Clique nas categorias abaixo para visualizar as opções. Para adicionar um
+      item ao fluxo, basta puxar ou clicar.
     </v-text>
   </v-box>
   <v-box>

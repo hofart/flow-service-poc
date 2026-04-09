@@ -35,7 +35,6 @@
   import { VContextMenu, VShortCuts } from 'vsoft-design-system';
   import { computed } from 'vue';
   import { useFlowBuilderNodes } from '../hooks/useFlowBuilderNodes';
-  import { t } from 'i18next';
 
   const { isOpenTermsEdit } = storeToRefs(useFlowBuilderTerms());
 
@@ -53,18 +52,14 @@
   const contextMenu = computed(() => [
     {
       id: '1',
-      name: t('modules.serviceFlow.views.add.contextMenu.copy'),
-      description: t(
-        'modules.serviceFlow.views.add.contextMenu.shortcuts.copy'
-      ),
+      name: 'Copiar',
+      description: 'CTRL+SHIFT+C',
       action: () => handleCopyEvent(),
     },
     {
       id: '2',
-      name: t('modules.serviceFlow.views.add.contextMenu.paste'),
-      description: t(
-        'modules.serviceFlow.views.add.contextMenu.shortcuts.paste'
-      ),
+      name: 'Colar',
+      description: 'CTRL+SHIFT+V',
       disabled: !hasClipboard.value,
       action: () => handlePasteEvent(),
     },
@@ -73,10 +68,8 @@
     },
     {
       id: '3',
-      name: t('modules.serviceFlow.views.add.contextMenu.delete'),
-      description: t(
-        'modules.serviceFlow.views.add.contextMenu.shortcuts.delete'
-      ),
+      name: 'Deletar',
+      description: 'SHIFT+Del',
       disabled: !isSelected.value,
       action: () => handleDeleteNode(),
     },
@@ -84,17 +77,17 @@
 
   const shortCuts = computed(() => [
     {
-      name: t('modules.serviceFlow.views.add.contextMenu.copy'),
+      name: 'Copiar',
       command: ['ctrl', 'shift', 'c'],
       action: () => handleCopyEvent(),
     },
     {
-      name: t('modules.serviceFlow.views.add.contextMenu.paste'),
+      name: 'Colar',
       command: ['ctrl', 'shift', 'v'],
       action: () => handlePasteEvent(),
     },
     {
-      name: t('modules.serviceFlow.views.add.contextMenu.delete'),
+      name: 'Deletar',
       command: ['shift', 'del'],
       action: () => handleDeleteNode(),
     },

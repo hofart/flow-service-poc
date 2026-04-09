@@ -27,7 +27,10 @@ export const serviceFlowService = {
     http.post<ServiceFlowConfigurationResponse>('/service-flows', input),
 
   createNodes: (flowId: string, input: CreateServiceFlowNodesRequest) =>
-    http.post<ServiceFlowNodesResponse>(`/service-flows/${flowId}/nodes`, input),
+    http.post<ServiceFlowNodesResponse>(
+      `/service-flows/${flowId}/nodes`,
+      input
+    ),
 
   updateConfiguration: (
     flowId: string,
@@ -39,10 +42,7 @@ export const serviceFlowService = {
     ),
 
   updateNodes: (flowId: string, input: UpdateServiceFlowNodesRequest) =>
-    http.put<ServiceFlowNodesResponse>(
-      `/service-flows/${flowId}/nodes`,
-      input
-    ),
+    http.put<ServiceFlowNodesResponse>(`/service-flows/${flowId}/nodes`, input),
 
   updateSideMenu: (items: ServiceFlowSideMenuItem[]) =>
     http.put<ServiceFlowSideMenuItem[]>('/service-flows/side-menu', { items }),

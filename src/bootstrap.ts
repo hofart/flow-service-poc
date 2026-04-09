@@ -1,7 +1,5 @@
-import i18nextVue from 'i18next-vue';
 import App from './App.vue';
 
-import { i18next } from 'core/i18n';
 import { initMsw } from 'core/msw';
 import { initObservability } from 'core/observability';
 import { createPinia } from 'pinia';
@@ -17,18 +15,10 @@ import 'vsoft-design-system/style.css';
 const bootstrap = async () => {
   await initMsw();
 
-  try {
-    await i18next.init();
-    await i18next.loadLanguages(i18next.language);
-  } catch (error) {
-    await i18next.init();
-  }
-
   const router = createAppRouter();
 
   const app = createApp(App)
     .use(createPinia())
-    .use(i18nextVue, { i18next })
     .use(router)
     .use(DesignSystem)
     .component('main-layout', MainLayout);

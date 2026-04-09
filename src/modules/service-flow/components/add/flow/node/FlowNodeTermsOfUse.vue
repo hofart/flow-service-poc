@@ -2,9 +2,7 @@
   <flow-node-container v-bind="data" class="flow-node--terms">
     <v-box margin="0 0 1em" padding="0">
       <v-text :color="data.color" font-size="13px">
-        {{
-          $t('modules.serviceFlow.views.add.flows.node.termOfUse.description')
-        }}
+        Confira as informações
       </v-text>
       <v-input
         placeholder="Descrição dos termos"
@@ -17,7 +15,7 @@
 
     <v-box direction="column" gap="4px" padding="0" margin="0 0 0.41em">
       <v-text :color="data.color" font-size="14px" font-weight="600">
-        {{ $t('modules.serviceFlow.views.add.flows.node.termOfUse.text') }}
+        Texto do termo de uso
       </v-text>
       <v-box
         padding="4px 0 4px 12px"
@@ -28,11 +26,7 @@
         round="8px"
         background="white"
       >
-        <v-text font-size="13px">
-          {{
-            $t('modules.serviceFlow.views.add.flows.node.termOfUse.editText')
-          }}
-        </v-text>
+        <v-text font-size="13px">Editar texto</v-text>
         <v-button
           icon="v-edit2"
           icon-button

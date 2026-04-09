@@ -3,17 +3,11 @@
     <flow-node-container v-bind="data">
       <v-box margin="0 0 1em" padding="0">
         <v-text font-size="13px" :color="data.color">
-          {{
-            $t('modules.serviceFlow.views.add.flows.node.consent.description')
-          }}
+          Preencha as informações
         </v-text>
         <v-input
           hide-label
-          :placeholder="
-            $t(
-              'modules.serviceFlow.views.add.flows.node.consent.placeholders.nameConsent'
-            )
-          "
+          placeholder="Nome consentimento"
           size="medium"
           v-model="dataNode.name"
           @change="handleUpdate($event, 'name')"
@@ -23,11 +17,7 @@
           multiline
           :rows="6"
           hide-label
-          :placeholder="
-            $t(
-              'modules.serviceFlow.views.add.flows.node.consent.placeholders.descriptionConsent'
-            )
-          "
+          placeholder="Descrição consentimento"
           v-model="dataNode.description"
           @change="handleUpdate($event, 'description')"
         />
@@ -35,9 +25,7 @@
 
       <v-box direction="column" gap="4px" padding="0" margin="0 0 0.41em">
         <v-text font-size="14px" :color="data.color" font-weight="600">
-          {{
-            $t('modules.serviceFlow.views.add.flows.node.consent.consentItems')
-          }}
+          Itens de consentimento
         </v-text>
         <flow-node-consent-button-add @open="handleOpenModal" />
         <flow-node-consent-item
@@ -66,15 +54,12 @@
   import FlowNodeConsentModal, { FormItem } from './FlowNodeConsentModal.vue';
   import FlowNodeConsentButtonAdd from './FlowNodeConsentButtonAdd.vue';
   import FlowNodeConsentItem from './FlowNodeConsentItem.vue';
-  import { useTranslation } from 'i18next-vue';
 
   const props = defineProps<NodeProps>();
 
   const openModalConsent = ref(false);
 
   const currentItem = ref<Partial<FormItem>>();
-
-  const { t } = useTranslation();
 
   const { updateNodeData, getValueByLanguage } = useFlowBuilderNodes();
 
@@ -83,7 +68,7 @@
   const data = computed(() => ({
     ...props,
     color: '#07B6B4',
-    title: t('modules.serviceFlow.views.add.flows.node.consent.title'),
+    title: 'Consentimento de dados',
   }));
 
   const handleOpenModal = () => {

@@ -1,9 +1,3 @@
 <template>
-  <language-provider>
-    <router-view />
-  </language-provider>
+  <router-view />
 </template>
-
-<script lang="ts" setup>
-  import { LanguageProvider } from 'shared/contexts/LanguageContext';
-</script>

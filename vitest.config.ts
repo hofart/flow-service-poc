@@ -12,7 +12,7 @@ export default defineConfig({
       shared: path.resolve(__dirname, './src/shared'),
       modules: path.resolve(__dirname, './src/modules'),
       router: path.resolve(__dirname, './src/router'),
-__mocks__: path.resolve(__dirname, './src/__mocks__'),
+      __mocks__: path.resolve(__dirname, './src/__mocks__'),
     },
   },
   test: {

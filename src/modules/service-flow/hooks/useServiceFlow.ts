@@ -16,7 +16,9 @@ export const useServiceFlow = defineStore('serviceFlows', () => {
   const flowParamsId = computed(() => route.params.flowId as string);
 
   const flowNodesData = ref<ServiceFlowNodesResponse>({ nodes: [], edges: [] });
-  const flowConfigData = ref<ServiceFlowConfigurationResponse | undefined>(undefined);
+  const flowConfigData = ref<ServiceFlowConfigurationResponse | undefined>(
+    undefined
+  );
   const flowSideMenuData = ref<ServiceFlowSideMenuItem[]>(
     staticSideMenu as ServiceFlowSideMenuItem[]
   );

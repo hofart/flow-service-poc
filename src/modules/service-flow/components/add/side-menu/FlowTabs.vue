@@ -11,13 +11,13 @@
       @click="handleSelectTab(FLOW)"
       :class="{ active: currentTab === FLOW }"
     >
-      {{ $t('modules.serviceFlow.views.add.sideMenu.tabs.creation') }}
+      Criação de fluxo
     </button>
     <button
       @click="handleSelectTab(PREVIEW)"
       :class="{ active: currentTab === PREVIEW }"
     >
-      {{ $t('modules.serviceFlow.views.add.sideMenu.tabs.preview') }}
+      Preview
     </button>
   </v-box>
 </template>

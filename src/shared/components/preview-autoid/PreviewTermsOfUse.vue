@@ -7,20 +7,10 @@
       class="preview-autoid-terms"
     >
       <v-box padding="0">
-        <v-text tag="h4">
-          {{
-            $t(
-              'modules.serviceFlow.views.add.preview.termsOfUse.title'
-            )
-          }}
-        </v-text>
+        <v-text tag="h4">Termos de uso e privacidade</v-text>
         <v-text margin="1em 0">
-          {{
-            $t(
-              'modules.serviceFlow.views.add.preview.termsOfUse.subtitle',
-              { title }
-            )
-          }}
+          Para prosseguir, é necessário que você leia e concorde com os termos
+          de uso do "{{ title }}".
         </v-text>
         <v-box
           background="rgb(241 241 241)"
@@ -43,9 +33,7 @@
         size="large"
         custom-color="#e9e9e9"
       >
-        {{
-          $t('modules.serviceFlow.views.add.preview.default.continue')
-        }}
+        Continuar
       </v-button>
     </v-box>
   </container>

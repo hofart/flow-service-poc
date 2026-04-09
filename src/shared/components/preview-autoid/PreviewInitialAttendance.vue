@@ -7,11 +7,7 @@
       class="preview-autoid-init"
     >
       <v-box padding="0">
-        <v-text tag="h4">
-          {{
-            $t('modules.serviceFlow.views.add.preview.default.hello')
-          }}
-        </v-text>
+        <v-text tag="h4">Olá!</v-text>
         <v-text margin="1em 0">
           {{ description }}
         </v-text>
@@ -21,9 +17,7 @@
       </v-box>
 
       <v-button class="preview-autoid-init__button" block size="large">
-        {{
-          $t('modules.serviceFlow.views.add.preview.default.continue')
-        }}
+        Continuar
       </v-button>
     </v-box>
   </container>
