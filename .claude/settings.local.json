@@ -18,7 +18,8 @@
       "Bash(xargs cat:*)",
       "Bash(yarn install:*)",
       "Bash(yarn typecheck:*)",
-      "Bash(npx prettier:*)"
+      "Bash(npx prettier:*)",
+      "Bash(npx vite:*)"
     ]
   }
 }

@@ -48,12 +48,16 @@
 
 <script setup lang="ts">
   import { NodeProps } from '@vue-flow/core';
-  import { computed, ref } from 'vue';
+  import { computed, defineAsyncComponent, ref } from 'vue';
   import { useFlowBuilderNodes } from 'modules/service-flow/hooks/useFlowBuilderNodes';
   import FlowNodeContainer from '../FlowNodeContainer.vue';
-  import FlowNodeConsentModal, { FormItem } from './FlowNodeConsentModal.vue';
+  import type { FormItem } from './FlowNodeConsentModal.vue';
   import FlowNodeConsentButtonAdd from './FlowNodeConsentButtonAdd.vue';
   import FlowNodeConsentItem from './FlowNodeConsentItem.vue';
+
+  const FlowNodeConsentModal = defineAsyncComponent(
+    () => import('./FlowNodeConsentModal.vue')
+  );
 
   const props = defineProps<NodeProps>();
 

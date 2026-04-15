@@ -6,23 +6,34 @@
       :autofocus="true"
       :indent-with-tab="true"
       :tab-size="2"
-      :extensions="extensions"
+      :extensions="extensions as never"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { Codemirror } from 'vue-codemirror';
-  import { html } from '@codemirror/lang-html';
-  import { EditorView } from '@codemirror/view';
+  import { defineAsyncComponent, shallowRef } from 'vue';
   import { storeToRefs } from 'pinia';
   import { useFlowBuilderTerms } from 'modules/service-flow/hooks/useFlowBuilderTerms';
+
+  const Codemirror = defineAsyncComponent(async () => {
+    const mod = await import('vue-codemirror');
+    return mod.Codemirror;
+  });
 
   const store = useFlowBuilderTerms();
 
   const { htmlContent } = storeToRefs(store);
 
-  const extensions = [html(), EditorView.lineWrapping];
+  const extensions = shallowRef<unknown[]>([]);
+
+  (async () => {
+    const [{ html }, { EditorView }] = await Promise.all([
+      import('@codemirror/lang-html'),
+      import('@codemirror/view'),
+    ]);
+    extensions.value = [html(), EditorView.lineWrapping];
+  })();
 </script>
 
 <style lang="scss">

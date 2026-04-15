@@ -6,6 +6,3 @@ node_modules/
 dist/
 coverage/
 public/mockServiceWorker.js
-
-# Micro-frontend
-mf-flow-service/

@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { sentryVitePlugin } from '@sentry/vite-plugin';
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   plugins: [
     vue(),
     tsconfigPaths({ projects: ['tsconfig.json'] }),
@@ -15,31 +15,16 @@ export default defineConfig(({ mode }) => ({
       name: 'flow_service_remote',
       filename: 'remoteEntry.js',
       exposes: {
-        './ServiceFlowModule': './src/modules/service-flow/router/routes.ts',
+        './ServiceFlowModule':
+          './src/modules/service-flow/views/ServiceFlowAddView.vue',
       },
       shared: {
         vue: { singleton: true, requiredVersion: '^3.5.13' },
         'vue-router': { singleton: true, requiredVersion: '^4.0.3' },
         pinia: { singleton: true, requiredVersion: '^2.3.0' },
-        'vsoft-design-system': { singleton: true },
       },
     }),
-    mode === 'production' &&
-      process.env.VITE_SENTRY_DSN &&
-      sentryVitePlugin({
-        org: process.env.SENTRY_ORG,
-        project: process.env.SENTRY_PROJECT,
-        authToken: process.env.SENTRY_AUTH_TOKEN,
-        sourcemaps: {
-          assets: './dist/**',
-          ignore: ['node_modules'],
-          filesToDeleteAfterUpload: './dist/**/*.map',
-        },
-      }),
-  ].filter(Boolean),
-  optimizeDeps: {
-    exclude: ['fsevents'],
-  },
+  ],
   css: {
     preprocessorOptions: {
       scss: {

@@ -1,9 +1,4 @@
-export const {
-  MODE: ENVIRONMENT,
-  VITE_BFF_URL,
-  VITE_SECURITY_LOGIN_URL,
-  VITE_SENTRY_DSN,
-} = import.meta.env;
+export const {} = import.meta.env;
 
 const defaultColor = '#07A09F';
 

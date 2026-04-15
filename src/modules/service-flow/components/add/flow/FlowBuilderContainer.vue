@@ -31,13 +31,28 @@
 </template>
 
 <script setup lang="ts">
+  import { defineAsyncComponent } from 'vue';
   import { useFlowBuilderNodes } from 'modules/service-flow/hooks/useFlowBuilderNodes';
-  import FlowBuilderNodes from './FlowBuilderNodes.vue';
-  import { Background } from '@vue-flow/background';
-  import { VueFlow } from '@vue-flow/core';
-  import { Controls } from '@vue-flow/controls';
   import { storeToRefs } from 'pinia';
-  import FlowNodePlaceholder from './node/FlowNodePlaceholder.vue';
+
+  const FlowBuilderNodes = defineAsyncComponent(
+    () => import('./FlowBuilderNodes.vue')
+  );
+  const FlowNodePlaceholder = defineAsyncComponent(
+    () => import('./node/FlowNodePlaceholder.vue')
+  );
+  const Background = defineAsyncComponent(async () => {
+    const mod = await import('@vue-flow/background');
+    return mod.Background;
+  });
+  const VueFlow = defineAsyncComponent(async () => {
+    const mod = await import('@vue-flow/core');
+    return mod.VueFlow;
+  });
+  const Controls = defineAsyncComponent(async () => {
+    const mod = await import('@vue-flow/controls');
+    return mod.Controls;
+  });
 
   const store = useFlowBuilderNodes();
 

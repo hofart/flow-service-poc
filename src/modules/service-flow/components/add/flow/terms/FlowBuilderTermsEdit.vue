@@ -58,14 +58,20 @@
 </template>
 
 <script lang="ts" setup>
+  import { defineAsyncComponent } from 'vue';
   import { VDropdown } from 'vsoft-design-system';
-  import FlowBuilderTermsHtml from './FlowBuildTermsHtml.vue';
-  import FlowBuilderTermsDesign from './FlowBuildTermsDesign.vue';
   import {
     useFlowBuilderTerms,
     TermsEditMode,
   } from 'modules/service-flow/hooks/useFlowBuilderTerms';
   import { storeToRefs } from 'pinia';
+
+  const FlowBuilderTermsHtml = defineAsyncComponent(
+    () => import('./FlowBuildTermsHtml.vue')
+  );
+  const FlowBuilderTermsDesign = defineAsyncComponent(
+    () => import('./FlowBuildTermsDesign.vue')
+  );
 
   const store = useFlowBuilderTerms();
 

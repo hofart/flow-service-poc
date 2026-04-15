@@ -8,7 +8,7 @@ import vitest from '@vitest/eslint-plugin';
 
 export default [
   {
-    ignores: ['coverage/', 'dist', 'public/mockServiceWorker.js', 'src/shared/lotties/', 'mf-flow-service/'],
+    ignores: ['coverage/', 'dist', 'public/mockServiceWorker.js', 'src/shared/lotties/'],
   },
   {
     files: ['**/*.vue'],

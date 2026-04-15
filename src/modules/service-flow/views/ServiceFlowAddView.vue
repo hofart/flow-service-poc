@@ -28,13 +28,22 @@
 <script setup lang="ts">
   import { storeToRefs } from 'pinia';
   import { useFlowBuilderTerms } from '../hooks/useFlowBuilderTerms';
-  import FlowBuilderHeader from '../components/add/FlowBuilderHeader.vue';
-  import FlowBuilderSideMenu from '../components/add/side-menu/FlowBuilderSideMenu.vue';
-  import FlowBuilderContainer from '../components/add/flow/FlowBuilderContainer.vue';
-  import FlowBuilderTermsEdit from '../components/add/flow/terms/FlowBuilderTermsEdit.vue';
   import { VContextMenu, VShortCuts } from 'vsoft-design-system';
-  import { computed } from 'vue';
+  import { computed, defineAsyncComponent } from 'vue';
   import { useFlowBuilderNodes } from '../hooks/useFlowBuilderNodes';
+
+  const FlowBuilderHeader = defineAsyncComponent(
+    () => import('../components/add/FlowBuilderHeader.vue')
+  );
+  const FlowBuilderSideMenu = defineAsyncComponent(
+    () => import('../components/add/side-menu/FlowBuilderSideMenu.vue')
+  );
+  const FlowBuilderContainer = defineAsyncComponent(
+    () => import('../components/add/flow/FlowBuilderContainer.vue')
+  );
+  const FlowBuilderTermsEdit = defineAsyncComponent(
+    () => import('../components/add/flow/terms/FlowBuilderTermsEdit.vue')
+  );
 
   const { isOpenTermsEdit } = storeToRefs(useFlowBuilderTerms());
 

@@ -1,7 +1,6 @@
 import App from './App.vue';
 
 import { initMsw } from 'core/msw';
-import { initObservability } from 'core/observability';
 import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 
@@ -24,7 +23,6 @@ const bootstrap = async () => {
     .component('main-layout', MainLayout);
 
   install({ app, router });
-  initObservability(app, router);
 
   app.mount('#app');
 };

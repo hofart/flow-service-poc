@@ -9,9 +9,14 @@
 </template>
 
 <script lang="ts" setup>
-  import { QuillEditor } from '@vueup/vue-quill';
+  import { defineAsyncComponent } from 'vue';
   import { storeToRefs } from 'pinia';
   import { useFlowBuilderTerms } from 'modules/service-flow/hooks/useFlowBuilderTerms';
+
+  const QuillEditor = defineAsyncComponent(async () => {
+    const mod = await import('@vueup/vue-quill');
+    return mod.QuillEditor;
+  });
 
   const store = useFlowBuilderTerms();
 
