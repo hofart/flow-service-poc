@@ -1,7 +1,7 @@
 <template>
   <v-box padding="6px 16px" class="flow-node flow-node--home">
     <v-box padding="0" direction="row" align="center" gap="8px">
-      <v-icon color="white" name="v-home" translate-y="3px" />
+      <v-icon color="white" name="v-home" translate-y="1px" />
       <v-text>Home</v-text>
       <v-box
         padding="0"

@@ -46,14 +46,16 @@
         <v-icon
           name="eye"
           @click="handleSelectTab(FlowBuilderTabs.PREVIEW)"
-          :color="color"
+          color="#3A3A3A"
           size="16px"
+          style="opacity: 0.85"
         />
         <v-icon
           name="times"
           @click="handleDeleteNode()"
-          :color="color"
+          color="#3A3A3A"
           size="16px"
+          style="opacity: 0.85"
         />
       </v-box>
     </v-box>

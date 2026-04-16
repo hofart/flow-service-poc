@@ -4,4 +4,5 @@ export enum PREVIEW_FLOW {
   TERMS_OF_USE = 'terms-of-use',
   CONSENT = 'consents',
   SIGNATURE = 'signature',
+  SERVER_DRIVEN_UI = 'server-driven-ui',
 }

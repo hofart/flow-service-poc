@@ -29,8 +29,10 @@
   import { storeToRefs } from 'pinia';
   import { useFlowBuilderTerms } from '../hooks/useFlowBuilderTerms';
   import { VContextMenu, VShortCuts } from 'vsoft-design-system';
-  import { computed, defineAsyncComponent } from 'vue';
+  import { computed, defineAsyncComponent, watch } from 'vue';
+  import { useRoute } from 'vue-router';
   import { useFlowBuilderNodes } from '../hooks/useFlowBuilderNodes';
+  import { useServiceFlow } from '../hooks/useServiceFlow';
 
   const FlowBuilderHeader = defineAsyncComponent(
     () => import('../components/add/FlowBuilderHeader.vue')
@@ -43,6 +45,29 @@
   );
   const FlowBuilderTermsEdit = defineAsyncComponent(
     () => import('../components/add/flow/terms/FlowBuilderTermsEdit.vue')
+  );
+
+  const props = defineProps<{ flowId?: string }>();
+
+  let route: ReturnType<typeof useRoute> | undefined;
+  try {
+    route = useRoute();
+  } catch {
+    route = undefined;
+  }
+
+  const { loadFlowData } = useServiceFlow();
+
+  const resolvedFlowId = computed(
+    () => props.flowId ?? (route?.params.flowId as string | undefined)
+  );
+
+  watch(
+    resolvedFlowId,
+    (flowId) => {
+      if (flowId) loadFlowData(flowId);
+    },
+    { immediate: true }
   );
 
   const { isOpenTermsEdit } = storeToRefs(useFlowBuilderTerms());

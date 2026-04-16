@@ -16,6 +16,7 @@
   import FlowNodeTermsOfUse from './node/FlowNodeTermsOfUse.vue';
   import FlowNodeConsent from './node/consent/FlowNodeConsent.vue';
   import FlowNodeSignature from './node/FlowNodeSignature.vue';
+  import FlowNodeServerDrivenUI from './node/server-driven-ui/FlowNodeServerDrivenUI.vue';
 
   const props = defineProps<NodeProps>();
 
@@ -33,6 +34,7 @@
         [PREVIEW_FLOW.TERMS_OF_USE]: FlowNodeTermsOfUse,
         [PREVIEW_FLOW.CONSENT]: FlowNodeConsent,
         [PREVIEW_FLOW.SIGNATURE]: FlowNodeSignature,
+        [PREVIEW_FLOW.SERVER_DRIVEN_UI]: FlowNodeServerDrivenUI,
       })[payload.key]
   );
 

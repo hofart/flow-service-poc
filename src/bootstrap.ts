@@ -1,11 +1,8 @@
 import App from './App.vue';
-
+import { createApp } from 'vue';
 import { initMsw } from 'core/msw';
 import { createPinia } from 'pinia';
-import { createApp } from 'vue';
-
 import DesignSystem, { install } from 'vsoft-design-system';
-
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import { createAppRouter } from 'router/routes';
 import MainLayout from 'shared/layouts/MainLayout.vue';
@@ -22,7 +19,7 @@ const bootstrap = async () => {
     .use(DesignSystem)
     .component('main-layout', MainLayout);
 
-  install({ app, router });
+  install({ app, router: router as any });
 
   app.mount('#app');
 };

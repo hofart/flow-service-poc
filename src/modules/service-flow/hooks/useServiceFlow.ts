@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
-import { computed, ref, watch } from 'vue';
-import { useRoute } from 'vue-router';
+import { computed, ref } from 'vue';
 import { serviceFlowService } from '../services/serviceFlowService';
 import { useServiceFlowsList } from './useServiceFlowsList';
 import type {
@@ -11,10 +10,6 @@ import type {
 import staticSideMenu from 'modules/service-flow/__mocks__/flow-side-menu.json';
 
 export const useServiceFlow = defineStore('serviceFlows', () => {
-  const route = useRoute();
-
-  const flowParamsId = computed(() => route.params.flowId as string);
-
   const flowNodesData = ref<ServiceFlowNodesResponse>({ nodes: [], edges: [] });
   const flowConfigData = ref<ServiceFlowConfigurationResponse | undefined>(
     undefined
@@ -34,8 +29,7 @@ export const useServiceFlow = defineStore('serviceFlows', () => {
     flowConfigData.value = configRes.data;
   };
 
-  const deleteFlowNodes = async () => {
-    const flowId = flowParamsId.value;
+  const deleteFlowNodes = async (flowId: string) => {
     if (!flowId) return;
     await serviceFlowService.deleteNodes(flowId);
   };
@@ -49,20 +43,11 @@ export const useServiceFlow = defineStore('serviceFlows', () => {
   const flowConfig = computed(() => flowConfigData.value);
   const flowSideMenu = computed(() => flowSideMenuData.value);
 
-  watch(
-    () => route.params.flowId,
-    (flowId) => {
-      if (flowId) {
-        loadFlowData(flowId as string);
-      }
-    },
-    { immediate: true }
-  );
-
   return {
     flowNodes,
     flowConfig,
     flowSideMenu,
+    loadFlowData,
     deleteFlowNodes,
     changeStatusServiceFlow,
   };

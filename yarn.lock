@@ -75,7 +75,7 @@
     json5 "^2.2.3"
     semver "^6.3.1"
 
-"@babel/generator@^7.29.0":
+"@babel/generator@^7.28.6", "@babel/generator@^7.29.0":
   version "7.29.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@babel/generator/-/generator-7.29.1.tgz"
   integrity sha1-0Jh2KQERq7sA75Yqe4OlMH+6DVA=
@@ -199,7 +199,7 @@
     "@babel/template" "^7.28.6"
     "@babel/types" "^7.29.0"
 
-"@babel/parser@^7.23.5", "@babel/parser@^7.25.4", "@babel/parser@^7.28.4", "@babel/parser@^7.28.6", "@babel/parser@^7.29.0", "@babel/parser@^7.29.2":
+"@babel/parser@^7.23.5", "@babel/parser@^7.25.4", "@babel/parser@^7.28.4", "@babel/parser@^7.28.5", "@babel/parser@^7.28.6", "@babel/parser@^7.29.0", "@babel/parser@^7.29.2":
   version "7.29.2"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@babel/parser/-/parser-7.29.2.tgz"
   integrity sha1-WL1QuaeVHRNJiKGuF3o175pwO6E=
@@ -705,27 +705,6 @@
   version "3.0.10"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@inquirer/type/-/type-3.0.10.tgz"
   integrity sha1-Ee1WTseEMqIA6iYBohLSSvgVDVA=
-
-"@intlify/core-base@10.0.8":
-  version "10.0.8"
-  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@intlify/core-base/-/core-base-10.0.8.tgz#2fcf46bab72d4daa8575eb11e04a549ea4030ac3"
-  integrity sha1-L89GurctTaqFdesR4EpUnqQDCsM=
-  dependencies:
-    "@intlify/message-compiler" "10.0.8"
-    "@intlify/shared" "10.0.8"
-
-"@intlify/message-compiler@10.0.8":
-  version "10.0.8"
-  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@intlify/message-compiler/-/message-compiler-10.0.8.tgz#48aee742916f8aaa43945682f32bec1c9e73e2f8"
-  integrity sha1-SK7nQpFviqpDlFaC8yvsHJ5z4vg=
-  dependencies:
-    "@intlify/shared" "10.0.8"
-    source-map-js "^1.0.2"
-
-"@intlify/shared@10.0.8":
-  version "10.0.8"
-  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@intlify/shared/-/shared-10.0.8.tgz#5f8019919dea8695b2e345257fc0cda7665d8ef9"
-  integrity sha1-X4AZkZ3qhpWy40Ulf8DNp2Zdjvk=
 
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
@@ -1660,6 +1639,17 @@
     d3-selection "^3.0.0"
     d3-zoom "^3.0.0"
 
+"@vue-macros/common@^3.1.1":
+  version "3.1.2"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue-macros/common/-/common-3.1.2.tgz#6b5f71ea219732fc955fdcfb15a95a417b87a0fe"
+  integrity sha1-a19x6iGXMvyVX9z7FalaQXuHoP4=
+  dependencies:
+    "@vue/compiler-sfc" "^3.5.22"
+    ast-kit "^2.1.2"
+    local-pkg "^1.1.2"
+    magic-string-ast "^1.0.2"
+    unplugin-utils "^0.3.0"
+
 "@vue/babel-helper-vue-transform-on@2.0.1":
   version "2.0.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue/babel-helper-vue-transform-on/-/babel-helper-vue-transform-on-2.0.1.tgz"
@@ -1744,10 +1734,59 @@
     "@vue/compiler-dom" "3.5.32"
     "@vue/shared" "3.5.32"
 
-"@vue/devtools-api@^6.5.0", "@vue/devtools-api@^6.6.3", "@vue/devtools-api@^6.6.4":
+"@vue/devtools-api@^6.6.4":
   version "6.6.4"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue/devtools-api/-/devtools-api-6.6.4.tgz"
   integrity sha1-y+l/4BYrNl7cHbqA4XP5BJJTU0M=
+
+"@vue/devtools-api@^7.7.7":
+  version "7.7.9"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue/devtools-api/-/devtools-api-7.7.9.tgz#999dbea50da6b00cf59a1336f11fdc2b43d9e063"
+  integrity sha1-mZ2+pQ2msAz1mhM28R/cK0PZ4GM=
+  dependencies:
+    "@vue/devtools-kit" "^7.7.9"
+
+"@vue/devtools-api@^8.0.6":
+  version "8.1.1"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue/devtools-api/-/devtools-api-8.1.1.tgz#367caf696349b1a49c655939ce605f4c96e30357"
+  integrity sha1-NnyvaWNJsaScZVk5zmBfTJbjA1c=
+  dependencies:
+    "@vue/devtools-kit" "^8.1.1"
+
+"@vue/devtools-kit@^7.7.9":
+  version "7.7.9"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue/devtools-kit/-/devtools-kit-7.7.9.tgz#bc218a815616e8987df7ab3e10fc1fb3b8706c58"
+  integrity sha1-vCGKgVYW6Jh996s+EPwfs7hwbFg=
+  dependencies:
+    "@vue/devtools-shared" "^7.7.9"
+    birpc "^2.3.0"
+    hookable "^5.5.3"
+    mitt "^3.0.1"
+    perfect-debounce "^1.0.0"
+    speakingurl "^14.0.1"
+    superjson "^2.2.2"
+
+"@vue/devtools-kit@^8.1.1":
+  version "8.1.1"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue/devtools-kit/-/devtools-kit-8.1.1.tgz#f205563eab389099d5181706b5b98e2d6fd2489d"
+  integrity sha1-8gVWPqs4kJnVGBcGtbmOLW/SSJ0=
+  dependencies:
+    "@vue/devtools-shared" "^8.1.1"
+    birpc "^2.6.1"
+    hookable "^5.5.3"
+    perfect-debounce "^2.0.0"
+
+"@vue/devtools-shared@^7.7.9":
+  version "7.7.9"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue/devtools-shared/-/devtools-shared-7.7.9.tgz#fa4c096b744927081a7dda5fcf05f34b1ae6ca14"
+  integrity sha1-+kwJa3RJJwgafdpfzwXzSxrmyhQ=
+  dependencies:
+    rfdc "^1.4.1"
+
+"@vue/devtools-shared@^8.1.1":
+  version "8.1.1"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/@vue/devtools-shared/-/devtools-shared-8.1.1.tgz#daaa16243d2f5eaa50f7e34902d2bb9e98235b52"
+  integrity sha1-2qoWJD0vXqpQ9+NJAtK7npgjW1I=
 
 "@vue/language-core@3.2.6":
   version "3.2.6"
@@ -1867,7 +1906,7 @@ acorn-jsx@^5.3.2:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/acorn-jsx/-/acorn-jsx-5.3.2.tgz"
   integrity sha1-ftW7VZCLOy8bxVxq8WU7rafweTc=
 
-acorn@^8.15.0, acorn@^8.8.1, acorn@^8.9.0:
+acorn@^8.15.0, acorn@^8.16.0, acorn@^8.8.1, acorn@^8.9.0:
   version "8.16.0"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/acorn/-/acorn-8.16.0.tgz"
   integrity sha1-TOecib5Ar+ev6POtuQKh8c6awIo=
@@ -2035,6 +2074,14 @@ assertion-error@^2.0.1:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/assertion-error/-/assertion-error-2.0.1.tgz"
   integrity sha1-9kGhlrM1aQsQcL8AtudZP+wZC/c=
 
+ast-kit@^2.1.2, ast-kit@^2.1.3:
+  version "2.2.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/ast-kit/-/ast-kit-2.2.0.tgz#6d9a298acefef5bdfc5a0fa51d94d1334ef2e671"
+  integrity sha1-bZopis7+9b38Wg+lHZTRM07y5nE=
+  dependencies:
+    "@babel/parser" "^7.28.5"
+    pathe "^2.0.3"
+
 ast-v8-to-istanbul@^0.3.3:
   version "0.3.12"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/ast-v8-to-istanbul/-/ast-v8-to-istanbul-0.3.12.tgz"
@@ -2043,6 +2090,14 @@ ast-v8-to-istanbul@^0.3.3:
     "@jridgewell/trace-mapping" "^0.3.31"
     estree-walker "^3.0.3"
     js-tokens "^10.0.0"
+
+ast-walker-scope@^0.8.3:
+  version "0.8.3"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/ast-walker-scope/-/ast-walker-scope-0.8.3.tgz#f516c42669f3b77e1473a78e5e9d3c5b2e7c1e8e"
+  integrity sha1-9RbEJmnzt34Uc6eOXp08Wy58Ho4=
+  dependencies:
+    "@babel/parser" "^7.28.4"
+    ast-kit "^2.1.3"
 
 async-function@^1.0.0:
   version "1.0.0"
@@ -2133,6 +2188,11 @@ bindings@^1.5.0:
   integrity sha1-EDU8npRTNLwFEabZCzj7x8nFBN8=
   dependencies:
     file-uri-to-path "1.0.0"
+
+birpc@^2.3.0, birpc@^2.6.1:
+  version "2.9.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/birpc/-/birpc-2.9.0.tgz#b59550897e4cd96a223e2a6c1475b572236ed145"
+  integrity sha1-tZVQiX5M2WoiPipsFHW1ciNu0UU=
 
 bl@^4.0.3:
   version "4.1.0"
@@ -2406,6 +2466,13 @@ chokidar@^4.0.0:
   dependencies:
     readdirp "^4.0.1"
 
+chokidar@^5.0.0:
+  version "5.0.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/chokidar/-/chokidar-5.0.0.tgz#949c126a9238a80792be9a0265934f098af369a5"
+  integrity sha1-lJwSapI4qAeSvpoCZZNPCYrzaaU=
+  dependencies:
+    readdirp "^5.0.0"
+
 chownr@^1.1.1:
   version "1.1.4"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/chownr/-/chownr-1.1.4.tgz"
@@ -2523,6 +2590,16 @@ concat-map@0.0.1:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/concat-map/-/concat-map-0.0.1.tgz"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
+confbox@^0.1.8:
+  version "0.1.8"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/confbox/-/confbox-0.1.8.tgz#820d73d3b3c82d9bd910652c5d4d599ef8ff8b06"
+  integrity sha1-gg1z07PILZvZEGUsXU1Znvj/iwY=
+
+confbox@^0.2.2:
+  version "0.2.4"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/confbox/-/confbox-0.2.4.tgz#592e7be71f882a4a874e3c88f0ac1ef6f7da1ce5"
+  integrity sha1-WS575x+IKkqHTjyI8Kwe9vfaHOU=
+
 config-chain@^1.1.13:
   version "1.1.13"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/config-chain/-/config-chain-1.1.13.tgz"
@@ -2545,6 +2622,13 @@ cookie@^1.0.2:
   version "1.1.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/cookie/-/cookie-1.1.1.tgz"
   integrity sha1-O7m9/II2nbnC9pyTycPOsxDIizw=
+
+copy-anything@^4:
+  version "4.0.5"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/copy-anything/-/copy-anything-4.0.5.tgz#16cabafd1ea4bb327a540b750f2b4df522825aea"
+  integrity sha1-Fsq6/R6kuzJ6VAt1DytN9SKCWuo=
+  dependencies:
+    is-what "^5.2.0"
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -3419,6 +3503,11 @@ exponential-backoff@^3.1.1:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/exponential-backoff/-/exponential-backoff-3.1.3.tgz"
   integrity sha1-Uc+SwcBJPHZgU/nTq+5ENMJE0vY=
 
+exsolve@^1.0.7:
+  version "1.0.8"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/exsolve/-/exsolve-1.0.8.tgz#7f5e34da61cd1116deda5136e62292c096f50613"
+  integrity sha1-f1402mHNERbe2lE25iKSwJb1BhM=
+
 extend@^3.0.2:
   version "3.0.2"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/extend/-/extend-3.0.2.tgz"
@@ -3834,6 +3923,11 @@ hey-listen@^1.0.8:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/hey-listen/-/hey-listen-1.0.8.tgz"
   integrity sha1-jllWH/ckkI3hqpJO1uzISlapqmg=
 
+hookable@^5.5.3:
+  version "5.5.3"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/hookable/-/hookable-5.5.3.tgz#6cfc358984a1ef991e2518cb9ed4a778bbd3215d"
+  integrity sha1-bPw1iYSh75keJRjLntSneLvTIV0=
+
 html-encoding-sniffer@^6.0.0:
   version "6.0.0"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/html-encoding-sniffer/-/html-encoding-sniffer-6.0.0.tgz"
@@ -4210,6 +4304,11 @@ is-weakset@^2.0.3:
     call-bound "^1.0.3"
     get-intrinsic "^1.2.6"
 
+is-what@^5.2.0:
+  version "5.5.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/is-what/-/is-what-5.5.0.tgz#a3031815757cfe1f03fed990bf6355a2d3f628c4"
+  integrity sha1-owMYFXV8/h8D/tmQv2NVotP2KMQ=
+
 is-wsl@^2.1.1:
   version "2.2.0"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/is-wsl/-/is-wsl-2.2.0.tgz"
@@ -4395,6 +4494,15 @@ listenercount@~1.0.1:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/listenercount/-/listenercount-1.0.1.tgz"
   integrity sha1-hMinKrWcRyUyFIDJdeZQg0LnCTc=
 
+local-pkg@^1.1.2:
+  version "1.1.2"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/local-pkg/-/local-pkg-1.1.2.tgz#c03d208787126445303f8161619dc701afa4abb5"
+  integrity sha1-wD0gh4cSZEUwP4FhYZ3HAa+kq7U=
+  dependencies:
+    mlly "^1.7.4"
+    pkg-types "^2.3.0"
+    quansync "^0.2.11"
+
 locate-path@^6.0.0:
   version "6.0.0"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/locate-path/-/locate-path-6.0.0.tgz"
@@ -4459,6 +4567,13 @@ lz-string@^1.5.0:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/lz-string/-/lz-string-1.5.0.tgz"
   integrity sha1-watQ93iHtxJiEgG6n9Tjpu0JmUE=
 
+magic-string-ast@^1.0.2:
+  version "1.0.3"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/magic-string-ast/-/magic-string-ast-1.0.3.tgz#51ef7832fd5c70a0188fb94627caa3b8c74ff9bf"
+  integrity sha1-Ue94Mv1ccKAYj7lGJ8qjuMdP+b8=
+  dependencies:
+    magic-string "^0.30.19"
+
 magic-string@0.30.8:
   version "0.30.8"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/magic-string/-/magic-string-0.30.8.tgz"
@@ -4473,7 +4588,7 @@ magic-string@^0.27.0:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.13"
 
-magic-string@^0.30.17, magic-string@^0.30.21:
+magic-string@^0.30.17, magic-string@^0.30.19, magic-string@^0.30.21:
   version "0.30.21"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/magic-string/-/magic-string-0.30.21.tgz"
   integrity sha1-VnY+wJoPqAkd8nh5/ZTRkHjADZE=
@@ -4669,6 +4784,11 @@ minizlib@^2.1.1, minizlib@^2.1.2:
     minipass "^3.0.0"
     yallist "^4.0.0"
 
+mitt@^3.0.1:
+  version "3.0.1"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/mitt/-/mitt-3.0.1.tgz#ea36cf0cc30403601ae074c8f77b7092cdab36d1"
+  integrity sha1-6jbPDMMEA2Aa4HTI93twks2rNtE=
+
 mkdirp-classic@^0.5.2, mkdirp-classic@^0.5.3:
   version "0.5.3"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/mkdirp-classic/-/mkdirp-classic-0.5.3.tgz"
@@ -4685,6 +4805,16 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/mkdirp/-/mkdirp-1.0.4.tgz"
   integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
+
+mlly@^1.7.4, mlly@^1.8.0:
+  version "1.8.2"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/mlly/-/mlly-1.8.2.tgz#e7f7919a82d13b174405613117249a3f449d78bb"
+  integrity sha1-5/eRmoLROxdEBWExFySaP0SdeLs=
+  dependencies:
+    acorn "^8.16.0"
+    pathe "^2.0.3"
+    pkg-types "^1.3.1"
+    ufo "^1.6.3"
 
 motion-dom@^12.23.23, motion-dom@^12.38.0:
   version "12.38.0"
@@ -5075,7 +5205,7 @@ path-to-regexp@^6.3.0:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/path-to-regexp/-/path-to-regexp-6.3.0.tgz"
   integrity sha1-K2omozdzeo4UFvknLtB2axwDifQ=
 
-pathe@^2.0.3:
+pathe@^2.0.1, pathe@^2.0.3:
   version "2.0.3"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/pathe/-/pathe-2.0.3.tgz"
   integrity sha1-PsvsVUIWhbcKnahyss/z4cvtFxY=
@@ -5084,6 +5214,16 @@ pathval@^2.0.0:
   version "2.0.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/pathval/-/pathval-2.0.1.tgz"
   integrity sha1-iFXFooma8HLWrAXRHkYEWtDcYF0=
+
+perfect-debounce@^1.0.0:
+  version "1.0.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/perfect-debounce/-/perfect-debounce-1.0.0.tgz#9c2e8bc30b169cc984a58b7d5b28049839591d2a"
+  integrity sha1-nC6LwwsWnMmEpYt9WygEmDlZHSo=
+
+perfect-debounce@^2.0.0:
+  version "2.1.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/perfect-debounce/-/perfect-debounce-2.1.0.tgz#e7078e38f231cb191855c3136a4423aef725d261"
+  integrity sha1-5weOOPIxyxkYVcMTakQjrvcl0mE=
 
 picocolors@1.1.1, picocolors@^1.1.1:
   version "1.1.1"
@@ -5100,13 +5240,30 @@ picomatch@^4.0.2, picomatch@^4.0.3:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/picomatch/-/picomatch-4.0.4.tgz"
   integrity sha1-/W9eAKFDCG4HTf/kySS4+yk7BYk=
 
-pinia@^2.3.0:
-  version "2.3.1"
-  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/pinia/-/pinia-2.3.1.tgz"
-  integrity sha1-VMR2Z1ty9avPr6JKdYJTHqjCPZQ=
+pinia@^3.0.4:
+  version "3.0.4"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/pinia/-/pinia-3.0.4.tgz#75dde12784a61e34c1fa6abcd13c1a1061c360c0"
+  integrity sha1-dd3hJ4SmHjTB+mq80TwaEGHDYMA=
   dependencies:
-    "@vue/devtools-api" "^6.6.3"
-    vue-demi "^0.14.10"
+    "@vue/devtools-api" "^7.7.7"
+
+pkg-types@^1.3.1:
+  version "1.3.1"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/pkg-types/-/pkg-types-1.3.1.tgz#bd7cc70881192777eef5326c19deb46e890917df"
+  integrity sha1-vXzHCIEZJ3fu9TJsGd60bokJF98=
+  dependencies:
+    confbox "^0.1.8"
+    mlly "^1.7.4"
+    pathe "^2.0.1"
+
+pkg-types@^2.3.0:
+  version "2.3.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/pkg-types/-/pkg-types-2.3.0.tgz#037f2c19bd5402966ff6810e32706558cb5b5726"
+  integrity sha1-A38sGb1UApZv9oEOMnBlWMtbVyY=
+  dependencies:
+    confbox "^0.2.2"
+    exsolve "^1.0.7"
+    pathe "^2.0.3"
 
 possible-typed-array-names@^1.0.0:
   version "1.1.0"
@@ -5240,6 +5397,11 @@ q@^1.1.2:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/q/-/q-1.5.1.tgz"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
+quansync@^0.2.11:
+  version "0.2.11"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/quansync/-/quansync-0.2.11.tgz#f9c3adda2e1272e4f8cf3f1457b04cbdb4ee692a"
+  integrity sha1-+cOt2i4ScuT4zz8UV7BMvbTuaSo=
+
 quill-delta@^3.6.2:
   version "3.6.3"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/quill-delta/-/quill-delta-3.6.3.tgz"
@@ -5312,6 +5474,11 @@ readdirp@^4.0.1:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/readdirp/-/readdirp-4.1.2.tgz"
   integrity sha1-64WAFDX78qfuWPGeCSGwaPxplI0=
 
+readdirp@^5.0.0:
+  version "5.0.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/readdirp/-/readdirp-5.0.0.tgz#fbf1f71a727891d685bb1786f9ba74084f6e2f91"
+  integrity sha1-+/H3GnJ4kdaFuxeG+bp0CE9uL5E=
+
 readdirp@~3.6.0:
   version "3.6.0"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/readdirp/-/readdirp-3.6.0.tgz"
@@ -5377,6 +5544,11 @@ rettime@^0.10.1:
   version "0.10.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/rettime/-/rettime-0.10.1.tgz"
   integrity sha1-zIu5hwND8oKxguWidomcCLlJFL4=
+
+rfdc@^1.4.1:
+  version "1.4.1"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/rfdc/-/rfdc-1.4.1.tgz#778f76c4fb731d93414e8f925fbecf64cce7f6ca"
+  integrity sha1-d492xPtzHZNBTo+SX77PZMzn9so=
 
 rimraf@2, rimraf@^2.5.2:
   version "2.7.1"
@@ -5501,6 +5673,11 @@ scale-svg-path@^0.0.1:
   version "0.0.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/scale-svg-path/-/scale-svg-path-0.0.1.tgz"
   integrity sha1-UpuNrKopTwejy0x582UbLxz1Go0=
+
+scule@^1.3.0:
+  version "1.3.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/scule/-/scule-1.3.0.tgz#6efbd22fd0bb801bdcc585c89266a7d2daa8fbd3"
+  integrity sha1-bvvSL9C7gBvcxYXIkman0tqo+9M=
 
 semver@^6.3.1:
   version "6.3.1"
@@ -5661,7 +5838,7 @@ socks@^2.6.2:
     ip-address "^10.0.1"
     smart-buffer "^4.2.0"
 
-"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.0.2, source-map-js@^1.2.0, source-map-js@^1.2.1:
+"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.2.0, source-map-js@^1.2.1:
   version "1.2.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/source-map-js/-/source-map-js-1.2.1.tgz"
   integrity sha1-HOVlD93YerwJnto33P8CTCZnrkY=
@@ -5675,6 +5852,11 @@ source-map@^0.6.1:
   version "0.6.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/source-map/-/source-map-0.6.1.tgz"
   integrity sha1-dHIq8y6WFOnCh6jQu95IteLxomM=
+
+speakingurl@^14.0.1:
+  version "14.0.1"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/speakingurl/-/speakingurl-14.0.1.tgz#f37ec8ddc4ab98e9600c1c9ec324a8c48d772a53"
+  integrity sha1-837I3cSrmOlgDByewySoxI13KlM=
 
 sprintf-js@~1.0.2:
   version "1.0.3"
@@ -5857,6 +6039,13 @@ style-mod@^4.0.0, style-mod@^4.1.0:
   version "4.1.3"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/style-mod/-/style-mod-4.1.3.tgz"
   integrity sha1-bpASJVu3mb2sN+KI92cbXXG/n3M=
+
+superjson@^2.2.2:
+  version "2.2.6"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/superjson/-/superjson-2.2.6.tgz#a223a3a988172a5f9656e2063fe5f733af40d099"
+  integrity sha1-oiOjqYgXKl+WVuIGP+X3M69A0Jk=
+  dependencies:
+    copy-anything "^4"
 
 supports-color@^5.3.0:
   version "5.5.0"
@@ -6143,6 +6332,11 @@ typescript@^5.7.2:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/typescript/-/typescript-5.9.3.tgz"
   integrity sha1-W09Z4VMQqxeiFvXWz1PuR27eZw8=
 
+ufo@^1.6.3:
+  version "1.6.3"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/ufo/-/ufo-1.6.3.tgz#799666e4e88c122a9659805e30b9dc071c3aed4f"
+  integrity sha1-eZZm5OiMEiqWWYBeMLncBxw67U8=
+
 unbox-primitive@^1.1.0:
   version "1.1.0"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/unbox-primitive/-/unbox-primitive-1.1.0.tgz"
@@ -6189,6 +6383,14 @@ unique-slug@^3.0.0:
   dependencies:
     imurmurhash "^0.1.4"
 
+unplugin-utils@^0.3.0, unplugin-utils@^0.3.1:
+  version "0.3.1"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/unplugin-utils/-/unplugin-utils-0.3.1.tgz#ef2873670a6a2a21bd2c9d31307257cc863a709c"
+  integrity sha1-7yhzZwpqKiG9LJ0xMHJXzIY6cJw=
+  dependencies:
+    pathe "^2.0.3"
+    picomatch "^4.0.3"
+
 unplugin@1.0.1:
   version "1.0.1"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/unplugin/-/unplugin-1.0.1.tgz"
@@ -6198,6 +6400,15 @@ unplugin@1.0.1:
     chokidar "^3.5.3"
     webpack-sources "^3.2.3"
     webpack-virtual-modules "^0.5.0"
+
+unplugin@^3.0.0:
+  version "3.0.0"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/unplugin/-/unplugin-3.0.0.tgz#01e40c474bf74d363744f4cb262569d26dd9bb43"
+  integrity sha1-AeQMR0v3TTY3RPTLJiVp0m3Zu0M=
+  dependencies:
+    "@jridgewell/remapping" "^2.3.5"
+    picomatch "^4.0.3"
+    webpack-virtual-modules "^0.6.2"
 
 unquote@~1.1.1:
   version "1.1.1"
@@ -6338,10 +6549,10 @@ vscode-uri@^3.0.8:
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/vscode-uri/-/vscode-uri-3.1.0.tgz"
   integrity sha1-3QnsWmaji1w//8d0AVcTSW0U4Jw=
 
-vsoft-design-system@^1.1.222:
-  version "1.1.233"
-  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/vsoft-design-system/-/vsoft-design-system-1.1.233.tgz"
-  integrity sha1-Ks+kj+oporzFc/18qg+FOXmF/yU=
+vsoft-design-system@^1.1.233:
+  version "1.1.238"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/vsoft-design-system/-/vsoft-design-system-1.1.238.tgz#b76000b0560a82593fc9aec4b1304613c303e35f"
+  integrity sha1-t2AAsFYKglk/ya7EsTBGE8MD418=
   dependencies:
     "@vuelidate/core" "^2.0.3"
     "@vuelidate/validators" "^2.0.4"
@@ -6400,21 +6611,35 @@ vue-eslint-parser@^9.4.3:
     lodash "^4.17.21"
     semver "^7.3.6"
 
-vue-i18n@10:
-  version "10.0.8"
-  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/vue-i18n/-/vue-i18n-10.0.8.tgz#adce21f875b29589c8bd602eb28b5c6ad2d85c97"
-  integrity sha1-rc4h+HWylYnIvWAusotcatLYXJc=
-  dependencies:
-    "@intlify/core-base" "10.0.8"
-    "@intlify/shared" "10.0.8"
-    "@vue/devtools-api" "^6.5.0"
-
-vue-router@4, vue-router@^4.0.3:
+vue-router@4:
   version "4.6.4"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/vue-router/-/vue-router-4.6.4.tgz"
   integrity sha1-oKnLnvgRoQbSSeS7kxPShnGAINg=
   dependencies:
     "@vue/devtools-api" "^6.6.4"
+
+vue-router@^5.0.3:
+  version "5.0.4"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/vue-router/-/vue-router-5.0.4.tgz#41ffc00bab448c406447115bbb29d49144cc1e7d"
+  integrity sha1-Qf/AC6tEjEBkRxFbuynUkUTMHn0=
+  dependencies:
+    "@babel/generator" "^7.28.6"
+    "@vue-macros/common" "^3.1.1"
+    "@vue/devtools-api" "^8.0.6"
+    ast-walker-scope "^0.8.3"
+    chokidar "^5.0.0"
+    json5 "^2.2.3"
+    local-pkg "^1.1.2"
+    magic-string "^0.30.21"
+    mlly "^1.8.0"
+    muggle-string "^0.4.1"
+    pathe "^2.0.3"
+    picomatch "^4.0.3"
+    scule "^1.3.0"
+    tinyglobby "^0.2.15"
+    unplugin "^3.0.0"
+    unplugin-utils "^0.3.1"
+    yaml "^2.8.2"
 
 vue-tsc@^3.0.8:
   version "3.2.6"
@@ -6493,6 +6718,11 @@ webpack-virtual-modules@^0.5.0:
   version "0.5.0"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/webpack-virtual-modules/-/webpack-virtual-modules-0.5.0.tgz"
   integrity sha1-Ni8Uc4pW2uEHk3q5jqcGLovdO2w=
+
+webpack-virtual-modules@^0.6.2:
+  version "0.6.2"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/webpack-virtual-modules/-/webpack-virtual-modules-0.6.2.tgz#057faa9065c8acf48f24cb57ac0e77739ab9a7e8"
+  integrity sha1-BX+qkGXIrPSPJMtXrA53c5q5p+g=
 
 whatwg-encoding@^3.1.1:
   version "3.1.1"
@@ -6678,6 +6908,11 @@ yallist@^4.0.0:
   version "4.0.0"
   resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/yallist/-/yallist-4.0.0.tgz"
   integrity sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=
+
+yaml@^2.8.2:
+  version "2.8.3"
+  resolved "https://pkgs.dev.azure.com/vsoft1/Certfy/_packaging/certfy-design-system/npm/registry/yaml/-/yaml-2.8.3.tgz#a0d6bd2efb3dd03c59370223701834e60409bd7d"
+  integrity sha1-oNa9Lvs90DxZNwIjcBg05gQJvX0=
 
 yargs-parser@^21.1.1:
   version "21.1.1"

@@ -7,6 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import { sentryVitePlugin } from '@sentry/vite-plugin';
 
 export default defineConfig(() => ({
+  base: 'http://localhost:4173/',
   plugins: [
     vue(),
     tsconfigPaths({ projects: ['tsconfig.json'] }),
@@ -21,7 +22,7 @@ export default defineConfig(() => ({
       shared: {
         vue: { singleton: true, requiredVersion: '^3.5.13' },
         'vue-router': { singleton: true, requiredVersion: '^4.0.3' },
-        pinia: { singleton: true, requiredVersion: '^2.3.0' },
+        pinia: { singleton: true, requiredVersion: '^3.0.4' },
       },
     }),
   ],
@@ -46,6 +47,11 @@ export default defineConfig(() => ({
   },
   server: {
     allowedHosts: true,
+  },
+  preview: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   build: {
     target: 'esnext',

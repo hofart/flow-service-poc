@@ -39,4 +39,5 @@ export const NODE_FIELDS_TO_VALIDATE: Record<string, string[]> = {
   [PREVIEW_FLOW.TERMS_OF_USE]: ['name', 'description'],
   [PREVIEW_FLOW.CONSENT]: ['name', 'description', 'items'],
   [PREVIEW_FLOW.SIGNATURE]: ['name', 'description'],
+  [PREVIEW_FLOW.SERVER_DRIVEN_UI]: ['items'],
 };

@@ -9,11 +9,11 @@
     "value": "terms-of-use",
     "items": [
       {
-        "label": "Termos do Kleber",
+        "label": "Termos exemplo 1",
         "value": "terms-of-use"
       },
       {
-        "label": "Termos do Galanter",
+        "label": "Termos exemplo 2",
         "value": "terms-of-use"
       }
     ]
@@ -29,8 +29,8 @@
     "items": []
   },
   {
-    "label": "Captura",
-    "value": "capture",
+    "label": "Interface dinâmica",
+    "value": "server-driven-ui",
     "items": []
   }
 ]

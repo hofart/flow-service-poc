@@ -37,6 +37,7 @@
         [PREVIEW_FLOW.TERMS_OF_USE]: PreviewTermsOfUse,
         [PREVIEW_FLOW.CONSENT]: PreviewConsent,
         [PREVIEW_FLOW.SIGNATURE]: PreviewSignature,
+        [PREVIEW_FLOW.SERVER_DRIVEN_UI]: PreviewContainer,
       })[preview.value]
   );
 

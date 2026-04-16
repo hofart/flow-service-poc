@@ -1,20 +1,17 @@
 <template>
   <flow-node-container v-bind="data" class="c-flow-builder-card-init">
-    <v-text font-size="12px">Informações da tela inicial</v-text>
+    <v-text font-size="12px" class="c-flow-builder-card-init__sub-title">
+      Informações da tela inicial
+    </v-text>
 
     <v-input
       multiline
-      placeholder="Descrição da jornada"
+      placeholder="Vamos iniciar o seu cadastro. Durante a operação você passará pelas seguintes etapas:"
       :rows="4"
       hide-label
       v-model="dataNode.description"
       @input="handleUpdate"
     />
-
-    <v-text font-size="12px" margin="1em 0 1em">
-      *A listagem com as etapas de atendimento será exibida abaixo do texto
-      acima para o usuário.
-    </v-text>
   </flow-node-container>
 </template>
 
@@ -46,7 +43,16 @@
 
   const data = computed(() => ({
     ...props,
-    color: '#838383',
+    color: '#3A3A3A',
     title: 'Início do atendimento',
   }));
 </script>
+
+<style lang="scss" scoped>
+  .c-flow-builder-card-init {
+    &__sub-title {
+      opacity: 0.85;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
