@@ -20,7 +20,8 @@
       "Bash(yarn typecheck:*)",
       "Bash(npx prettier:*)",
       "Bash(npx vite:*)",
-      "Bash(cat \"C:/dev/Certfy/certfy-op-web-admin/src/types/\"*.ts)"
+      "Bash(cat \"C:/dev/Certfy/certfy-op-web-admin/src/types/\"*.ts)",
+      "Bash(git add *)"
     ]
   }
 }

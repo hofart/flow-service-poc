@@ -22,6 +22,12 @@ export interface PatchType {
   description?: string;
   name?: string;
   items?: ItemPatch[];
+  campos?: import('./server-driven-ui.interface').CampoEtapa[];
+  regras?: import('./server-driven-ui.interface').RegraValidacao[];
+  fluxoId?: string;
+  etapaId?: string;
+  nomeEtapa?: string;
+  tipoEtapa?: number;
   partialFilled?: boolean;
   empty?: boolean;
 }

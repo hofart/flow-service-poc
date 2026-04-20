@@ -14,6 +14,7 @@ import {
 import {
   DEFAULT_Y,
   DEFAULT_LANGUAGES,
+  DEFAULT_SERVER_DRIVEN_UI_PATCH,
   DEFAULT_WIDTH,
   GAP,
   NODE_FIELDS_TO_VALIDATE,
@@ -161,6 +162,11 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
 
     const positionY = getNodePositionY(nodeId);
 
+    const defaultPatch =
+      key === PREVIEW_FLOW.SERVER_DRIVEN_UI
+        ? DEFAULT_SERVER_DRIVEN_UI_PATCH.map((lang) => ({ ...lang }))
+        : DEFAULT_LANGUAGES.map((lang) => ({ ...lang }));
+
     return {
       id: nodeId,
       type: 'special',
@@ -168,7 +174,7 @@ export const useFlowBuilderNodes = defineStore('flowBuilderNodes', () => {
       data: {
         key,
         label: nodeId,
-        patch: patch ?? DEFAULT_LANGUAGES.map((lang) => ({ ...lang })),
+        patch: patch ?? defaultPatch,
       },
     };
   };
